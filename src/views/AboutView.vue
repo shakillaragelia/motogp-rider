@@ -1,15 +1,10 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <MainLayout>
+    <h2>About This Project</h2>
+    <p>Ini adalah proyek Vue.js untuk menampilkan data MotoGP.</p>
+  </MainLayout>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<script setup>
+import MainLayout from '../components/MainLayout.vue'
+</script>
