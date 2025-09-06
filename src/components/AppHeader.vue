@@ -1,47 +1,50 @@
 <template>
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
+      <RouterLink to="/" class="logo d-flex align-items-center">
         <i class="bi bi-buildings"></i>
         <h1 class="sitename">MySchool</h1>
-      </a>
+      </RouterLink>
 
-
-<!-- NAVBAR -->
-
+      <!-- NAVBAR -->
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li>
+            <RouterLink to="/" class="active">Home</RouterLink>
+          </li>
+          <li class="dropdown">
+            <RouterLink to="/about">
+              <span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </RouterLink>
             <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="admissions.html">Admissions</a></li>
-              <li><a href="academics.html">Academics</a></li>
-              <li><a href="faculty-staff.html">Faculty &amp; Staff</a></li>
-              <li><a href="campus-facilities.html">Campus &amp; Facilities</a></li>
+              <li><RouterLink to="/about">About Us</RouterLink></li>
+              <li><RouterLink to="/admissions">Admissions</RouterLink></li>
+              <li><RouterLink to="/academics">Academics</RouterLink></li>
+              <li><RouterLink to="/faculty-staff">Faculty &amp; Staff</RouterLink></li>
+              <li><RouterLink to="/campus-facilities">Campus &amp; Facilities</RouterLink></li>
             </ul>
           </li>
-
-          <li><a href="students-life.html">Students Life</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="alumni.html">Alumni</a></li>
-          <li class="dropdown"><a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><RouterLink to="/students-life">Students Life</RouterLink></li>
+          <li><RouterLink to="/news">News</RouterLink></li>
+          <li><RouterLink to="/events">Events</RouterLink></li>
+          <li><RouterLink to="/alumni">Alumni</RouterLink></li>
+          <li class="dropdown">
+            <a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="news-details.html">News Details</a></li>
-              <li><a href="event-details.html">Event Details</a></li>
-              <li><a href="privacy.html">Privacy</a></li>
-              <li><a href="terms-of-service.html">Terms of Service</a></li>
-              <li><a href="404.html">Error 404</a></li>
-              <li><a href="starter-page.html">Starter Page</a></li>
+              <li><RouterLink to="/news-details">News Details</RouterLink></li>
+              <li><RouterLink to="/event-details">Event Details</RouterLink></li>
+              <li><RouterLink to="/privacy">Privacy</RouterLink></li>
+              <li><RouterLink to="/terms-of-service">Terms of Service</RouterLink></li>
+              <li><RouterLink to="/404">Error 404</RouterLink></li>
+              <li><RouterLink to="/starter-page">Starter Page</RouterLink></li>
             </ul>
           </li>
-
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown">
+            <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li class="dropdown">
+                <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="#">Deep Dropdown 1</a></li>
                   <li><a href="#">Deep Dropdown 2</a></li>
@@ -55,14 +58,14 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><RouterLink to="/contact">Contact</RouterLink></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
     </div>
-    </header>
-  </template>
+  </header>
+</template>
 
 <script setup>
+import { RouterLink } from 'vue-router'
 </script>
