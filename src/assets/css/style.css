@@ -1912,49 +1912,49 @@ section,
   font-weight: 500;
 }
 
-.students-life-block .highlights-section {
+ .highlights-section {
   margin-top: 6rem;
 }
 
-.students-life-block .highlights-section .highlight-card {
+ .highlights-section .highlight-card {
   background: var(--surface-color);
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
-.students-life-block .highlights-section .highlight-card:hover {
+ .highlights-section .highlight-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
-.students-life-block .highlights-section .highlight-card .highlight-image {
+ .highlights-section .highlight-card .highlight-image {
   overflow: hidden;
 }
 
-.students-life-block .highlights-section .highlight-card .highlight-image img {
+ .highlights-section .highlight-card .highlight-image img {
   width: 100%;
   height: 220px;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.students-life-block .highlights-section .highlight-card:hover .highlight-image img {
+ .highlights-section .highlight-card:hover .highlight-image img {
   transform: scale(1.1);
 }
 
-.students-life-block .highlights-section .highlight-card .highlight-content {
+ .highlights-section .highlight-card .highlight-content {
   padding: 2rem;
 }
 
-.students-life-block .highlights-section .highlight-card .highlight-content h5 {
+ .highlights-section .highlight-card .highlight-content h5 {
   font-size: 1.25rem;
   font-weight: 500;
   margin-bottom: 1rem;
   color: var(--heading-color);
 }
 
-.students-life-block .highlights-section .highlight-card .highlight-content p {
+ .highlights-section .highlight-card .highlight-content p {
   font-size: 0.95rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
