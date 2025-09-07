@@ -1,10 +1,9 @@
 <template>
-  <MainLayout>
-    <h1 class="text-center">Welcome to MotoGP Rider!</h1>
-    <p class="lead text-center">Proyek Vue + Bootstrap</p>
-  </MainLayout>
+  <AppHeader></AppHeader>
+  <AppFooter></AppFooter>
 </template>
 
 <script setup>
-import MainLayout from '../components/MainLayout.vue'
+import AppFooter from '@/components/AppFooter.vue';
+import AppHeader from '@/components/AppHeader.vue';
 </script>
