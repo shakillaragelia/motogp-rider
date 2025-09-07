@@ -180,6 +180,58 @@ h6 {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
 }
 
+.hero-container {
+  background: url('/img/your-hero-bg.jpg') center/cover no-repeat;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-content {
+  text-align: center;
+  color: #fff;
+  background: rgba(30, 41, 59, 0.6);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: auto;
+}
+.cta-buttons {
+  margin: 2rem 0;
+}
+.btn-apply, .btn-tour {
+  display: inline-block;
+  margin: 0 1rem;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  background: #7c2d12;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+}
+.btn-tour {
+  background: #334155;
+}
+.announcement {
+  margin-top: 2rem;
+  background: #fff;
+  color: #7c2d12;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.announcement-badge {
+  display: inline-block;
+  background: #e11d48;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
