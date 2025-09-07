@@ -145,7 +145,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #7c3848;
+  --background-color: #000000;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
@@ -160,8 +160,8 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 32px;
-  margin-right: 8px;
+  max-height: 100px;
+  margin-right: 100px;
 }
 
 .header .logo i {
@@ -1969,6 +1969,7 @@ section,
   object-fit: cover;  /* ensures the image covers the area without distortion */
   border-radius: 8px; /* optional: rounded corners */
 }
+
 
 @media (max-width: 991.98px) {
   .students-life-block .content-wrapper {
