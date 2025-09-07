@@ -6,7 +6,7 @@
           <div class="col-lg-5">
             <div class="brand-section">
               <RouterLink to="/" class="logo d-flex align-items-center mb-4">
-                <span class="sitename">Riders Card</span>
+                <span class="sitename">Riders</span>
               </RouterLink>
               <p class="brand-description">
                 Crafting exceptional digital experiences through thoughtful design and innovative solutions that elevate your brand presence.
