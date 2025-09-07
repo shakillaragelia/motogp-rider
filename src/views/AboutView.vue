@@ -1,10 +1,9 @@
 <template>
-  <MainLayout>
-    <h2>About This Project</h2>
-    <p>Ini adalah proyek Vue.js untuk menampilkan data MotoGP.</p>
-  </MainLayout>
+  <AppHeader></AppHeader>
+  <AppFooter></AppFooter>
 </template>
 
 <script setup>
-import MainLayout from '../components/MainLayout.vue'
+import AppFooter from '@/components/AppFooter.vue';
+import AppHeader from '@/components/AppHeader.vue';
 </script>
