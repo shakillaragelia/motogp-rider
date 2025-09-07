@@ -3,7 +3,7 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
       <RouterLink to="/" class="logo d-flex align-items-center">
         <i class="bi bi-buildings"></i>
-        <h1 class="sitename">Riders Card</h1>
+         <img src="/img/motoGPlogo.png" alt="Riders Card Logo" class="sitename" style="height: 40px;" />
       </RouterLink>
 
       <!-- NAVBAR -->
