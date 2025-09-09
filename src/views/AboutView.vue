@@ -18,7 +18,7 @@
         </div>
       </div>
     </section>
-    <RidersCards />
+    <AboutMotogp />
   </main>
   <AppFooter />
 </template>
@@ -26,7 +26,7 @@
 <script setup>
 import AppFooter from '@/components/AppFooter.vue'
 import AppHeader from '@/components/AppHeader.vue'
-import RidersCards from '@/components/RidersCards.vue'
+import AboutMotogp from '@/components/AboutMotogp.vue'
 </script>
 
 <style scoped>
