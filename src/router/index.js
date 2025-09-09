@@ -19,7 +19,23 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       //component: () => import('../views/AboutView.vue'),
     },
-  ],
+  ]
+
+const routes = [
+  { path: '/', name: 'Home', component: HomeView },
+  { path: '/about', name: 'About', component: AboutView },
+]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    // ini buat scroll otomatis pas ganti route
+    if (savedPosition) return savedPosition
+    return { top: 0 } // scroll ke atas tiap pindah halaman
+  },
+
+
 })
 
 export default router
