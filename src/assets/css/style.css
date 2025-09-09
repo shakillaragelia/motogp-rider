@@ -181,7 +181,7 @@ h6 {
 }
 
 .hero-container {
-  background: url('public/img/rider/all.jpg') center/cover no-repeat;
+  background: url('/image/all.jpg') center/cover no-repeat;
   min-height: 500px;
   display: flex;
   align-items: center;
