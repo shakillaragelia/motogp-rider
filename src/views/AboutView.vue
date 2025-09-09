@@ -1,5 +1,4 @@
 <template>
-  <AppHeader />
   <main class="main">
     <!-- Hero Section -->
     <section id="hero" class="hero section">
@@ -20,12 +19,9 @@
     </section>
     <AboutMotogp />
   </main>
-  <AppFooter />
 </template>
 
 <script setup>
-import AppFooter from '@/components/AppFooter.vue'
-import AppHeader from '@/components/AppHeader.vue'
 import AboutMotogp from '@/components/AboutMotogp.vue'
 </script>
 
