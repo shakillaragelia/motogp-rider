@@ -1,62 +1,29 @@
 <template>
-  <section id="featured-programs" class="featured-programs section">
-    <!-- Section Title -->
-    <div class="container section-title">
-      <h2>Featured Programs</h2>
-      <p>
-        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
-      </p>
-    </div>
-    <!-- End Section Title -->
-
-    <div class="container">
-      <div class="featured-programs-wrapper">
-        <div class="programs-overview">
-          <div class="overview-content">
-            <h2>Discover Excellence in Education</h2>
-            <p>
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-              ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-              in voluptate velit esse cillum dolore.
-            </p>
-            <div class="overview-stats">
-              <div
-                v-for="(stat, index) in stats"
-                :key="index"
-                class="stat-item"
-              >
-                <span class="stat-number">{{ stat.number }}</span>
-                <span class="stat-label">{{ stat.label }}</span>
-              </div>
-            </div>
+  <main class="main">
+    <RaceSchedule>
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>Shaping Minds for Tomorrow's World</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis magna vel dolor mattis hendrerit. Vestibulum sodales dignissim ipsum id commodo.</p>
+          <div class="cta-buttons">
+            <a href="#" class="btn-apply">Apply Now</a>
+            <a href="#" class="btn-tour">Campus Tour</a>
           </div>
-
-          <div class="overview-image">
-            <img
-              src='/img/rider/marcmarquez.jpeg'
-              alt="Education"
-              class="img-fluid"
-            />
+          <div class="announcement">
+            <div class="announcement-badge">New</div>
+            <p>Fall 2025 Applications Open - Early Decision Deadline December 15</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    </RaceSchedule>
+  </main>
 </template>
 
-<script>
-export default {
-  name: "FeaturedPrograms",
-  data() {
-    return {
-      stats: [
-        { number: "2,500+", label: "Active Students" },
-        { number: "98%", label: "Graduate Rate" },
-        { number: "50+", label: "Programs Offered" },
-      ],
-    };
-  },
-};
+<script setup>
+import RaceSchedule from '@/components/RaceSchedule.vue';
 </script>
 
 <style scoped>
