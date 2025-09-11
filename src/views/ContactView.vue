@@ -19,10 +19,12 @@
       </div>
     </section>
     </ContactInfo>
+    <AppFooter></AppFooter>
   </main>
 </template>
 
 <script setup>
+import AppFooter from '@/components/AppFooter.vue';
 import ContactInfo from '@/components/ContactInfo.vue';
 </script>
 
