@@ -60,5 +60,4 @@ export default {
 </script>
 
 <style scoped>
-/* kamu bisa tambahin styling section featured-programs di sini */
 </style>
