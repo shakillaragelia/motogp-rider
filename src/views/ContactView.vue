@@ -138,7 +138,7 @@ export default {
       this.error = ''
       this.sent = false
 
-      // Contoh simulasi async submit
+  
       setTimeout(() => {
         if(this.form.name && this.form.email) {
           this.sent = true
@@ -154,5 +154,4 @@ export default {
 </script>
 
 <style scoped>
-/* Tambahkan styling custom jika perlu */
 </style>
