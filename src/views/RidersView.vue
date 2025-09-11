@@ -118,42 +118,42 @@ export default {
         {
           name: "James Wilson",
           role: "Vice Principal",
-          photo: "@/assets/img/person/person-m-4.webp",
+          photo: '/img/rider/marcmarquez.jpeg',
           description:
             "Nunc dignissim risus id metus molestie tempor. Cras vestibulum bibendum augue praesent mattis.",
         },
         {
           name: "Elena Rodriguez",
           role: "Academic Coordinator",
-          photo: "@/assets/img/person/person-f-6.webp",
+          photo: '/img/rider/marcmarquez.jpeg',
           description:
             "Praesent sapien massa convallis a pellentesque nec egestas non nisi cras adipiscing.",
         },
         {
           name: "Michael Chen",
           role: "Student Affairs Director",
-          photo: "@/assets/img/person/person-m-9.webp",
+          photo: '/img/rider/marcmarquez.jpeg',
           description:
             "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.",
         },
         {
           name: "Sarah Mitchell",
           role: "Curriculum Head",
-          photo: "@/assets/img/person/person-f-11.webp",
+          photo: '/img/rider/marcmarquez.jpeg',
           description:
             "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.",
         },
         {
           name: "David Kumar",
           role: "Operations Manager",
-          photo: "@/assets/img/person/person-m-13.webp",
+          photo: '/img/rider/marcmarquez.jpeg',
           description:
             "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.",
         },
         {
           name: "Lisa Anderson",
           role: "Admissions Director",
-          photo: "@/assets/img/person/person-f-14.webp",
+          photo: '/img/rider/marcmarquez.jpeg',
           description:
             "Ut enim ad minima veniam quis nostrum exercitationem ullam corporis suscipit laboriosam.",
         },

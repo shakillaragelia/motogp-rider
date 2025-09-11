@@ -48,7 +48,7 @@ export default {
     return {
       programs: [
         {
-          image: "@/assets/img/education/courses-8.webp",
+          image: '/img/rider/marcmarquez.jpeg',
           badge: { icon: "bi bi-star-fill", text: "Top Rated" },
           category: "Engineering",
           title: "Computer Science & AI",
@@ -61,7 +61,7 @@ export default {
         },
         // contoh tambahan program
         {
-          image: "@/assets/img/education/courses-9.webp",
+          image: '/img/rider/marcmarquez.jpeg',
           badge: null,
           category: "Business",
           title: "International Business",

@@ -33,7 +33,7 @@
 
           <div class="overview-image">
             <img
-              src="@/assets/img/education/showcase-7.webp"
+              src='/img/rider/marcmarquez.jpeg'
               alt="Education"
               class="img-fluid"
             />
