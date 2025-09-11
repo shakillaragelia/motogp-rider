@@ -4,7 +4,7 @@ import TeamsView from '@/views/TeamsView.vue'
 import RidersView from '@/views/RidersView.vue'
 import ScheduleView from '@/views/ScheduleView.vue'
 import ContactView from '@/views/ContactView.vue'
-//import AboutView from '../views/AboutView.vue'
+import AboutView from '../views/AboutView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,7 +17,7 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-     // component: AboutView,
+      component: AboutView,
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -26,19 +26,19 @@ const router = createRouter({
 
     {
       path: '/',
-      name: 'team',
+      name: 'teams',
       component: TeamsView,
     },
 
     {
       path: '/',
-      name: 'rider',
+      name: 'riders',
       component: RidersView,
     },
 
     {
       path: '/',
-      name: 'schedule',
+      name: 'race-shcedule',
       component: ScheduleView,
     },
 

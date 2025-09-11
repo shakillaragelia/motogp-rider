@@ -21,7 +21,7 @@
       <div class="leadership-grid">
         <div class="featured-leader">
           <div class="leader-image-large">
-            <img src="@/assets/img/education/teacher-3.webp" alt="Principal" class="img-fluid" />
+            <img src='/img/rider/marcmarquez.jpeg' alt="Principal" class="img-fluid" />
           </div>
           <div class="leader-details">
             <h3>Dr. Margaret Thompson</h3>

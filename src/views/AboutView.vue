@@ -1,5 +1,6 @@
 <template>
   <main class="main">
+    <AboutMotogp>
     <!-- Hero Section -->
     <section id="hero" class="hero section">
       <div class="hero-container">
@@ -17,7 +18,7 @@
         </div>
       </div>
     </section>
-    <AboutMotogp />
+  </AboutMotogp>
   </main>
 </template>
 
