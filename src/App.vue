@@ -8,6 +8,7 @@ import TeamsView from './views/TeamsView.vue';
 </script> 
 
 <template>
+  <AppHeader />
   <section id="home">
     <HomeView />
   </section>
@@ -27,7 +28,12 @@ import TeamsView from './views/TeamsView.vue';
     <ContactView />
   </section>
 </template>
+
 <style scoped>
+html {
+  scroll-behavior: smooth;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
