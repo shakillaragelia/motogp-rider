@@ -25,29 +25,24 @@ const router = createRouter({
     },
 
     {
-      path: '/',
       path: '/teams',
       name: 'teams',
       component: TeamsView,
     },
 
     {
-      path: '/',
       path: '/riders',
       name: 'riders',
       component: RidersView,
     },
 
     {
-      path: '/',
-      name: 'race-shcedule',
       path: '/race-schedule',
       name: 'race-schedule',
       component: ScheduleView,
     },
 
     {
-      path: '/',
       path: '/contact',
       name: 'contact',
       component: ContactView,

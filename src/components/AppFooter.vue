@@ -122,7 +122,7 @@
           <div class="row align-items-center">
             <div class="col-lg-6">
               <div class="copyright">
-                <p>© <span class="sitename">MyWebsite</span>. All rights reserved.</p>
+                <p>© <span class="sitename">Ragel</span>. All rights reserved.</p>
               </div>
             </div>
             <div class="col-lg-6">
@@ -144,8 +144,30 @@
       </div>
     </div>
   </footer>
+  <button v-if="showButton" @click="scrollToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="bi bi-arrow-right-circle"></i>
+  </button>
 </template>
 
 <script setup>
 import { RouterLink } from 'vue-router'
+import { onMounted, ref, onBeforeUnmount } from 'vue'
+
+const showButton = ref(false)
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+function handleScroll() {
+  showButton.value = window.scrollY > 300
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
