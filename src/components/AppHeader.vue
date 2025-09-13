@@ -27,14 +27,14 @@
          <img src="/img/motoGPlogo.png" alt="MotoGP Logo" class="hero-logo" />
         <h1>Faster. Forward. Fearless.</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis magna vel dolor mattis hendrerit. Vestibulum sodales dignissim ipsum id commodo.</p>
-        <div class="cta-buttons">
+        <!-- <div class="cta-buttons">
           <a href="#" class="btn-apply">Apply Now</a>
           <a href="#" class="btn-tour">Campus Tour</a>
-        </div>
-        <div class="announcement">
+        </div> -->
+        <!-- <div class="announcement">
           <div class="announcement-badge">New</div>
           <p>Fall 2025 Applications Open - Early Decision Deadline December 15</p>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>

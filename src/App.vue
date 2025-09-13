@@ -1,11 +1,32 @@
 <script setup>
-import MainLayout from './layouts/MainLayout.vue';
+import AboutView from './views/AboutView.vue';
+import ContactView from './views/ContactView.vue';
+import HomeView from './views/HomeView.vue';
+import RidersView from './views/RidersView.vue';
+import ScheduleView from './views/ScheduleView.vue';
+import TeamsView from './views/TeamsView.vue';
 </script> 
-<template>
-  <MainLayout>
-  </MainLayout>
-</template>
 
+<template>
+  <section id="home">
+    <HomeView />
+  </section>
+  <section id="about">
+    <AboutView />
+  </section>
+  <section id="riders">
+    <RidersView />
+  </section>
+  <section id="teams">
+    <TeamsView />
+  </section>
+  <section id="schedule">
+    <ScheduleView />
+  </section>
+  <section id="contact">
+    <ContactView />
+  </section>
+</template>
 <style scoped>
 header {
   line-height: 1.5;
