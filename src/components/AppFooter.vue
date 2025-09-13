@@ -145,7 +145,7 @@
     </div>
   </footer>
   <button v-if="showButton" @click="scrollToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
-    <i class="bi bi-arrow-right-circle"></i>
+    <i class="bi bi-arrow-up-circle"></i>
   </button>
 </template>
 
