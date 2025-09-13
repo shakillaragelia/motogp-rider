@@ -1,4 +1,5 @@
 <script setup>
+import AppHeader from './components/AppHeader.vue'
 import AboutView from './views/AboutView.vue';
 import ContactView from './views/ContactView.vue';
 import HomeView from './views/HomeView.vue';
