@@ -24,7 +24,8 @@
   <section id="hero" class="hero section">
     <div class="hero-container">
       <div class="hero-content">
-        <h1>Shaping Minds for Tomorrow's World</h1>
+         <img src="/img/motoGPlogo.png" alt="MotoGP Logo" class="hero-logo" />
+        <h1>Faster. Forward. Fearless.</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis magna vel dolor mattis hendrerit. Vestibulum sodales dignissim ipsum id commodo.</p>
         <div class="cta-buttons">
           <a href="#" class="btn-apply">Apply Now</a>
@@ -42,22 +43,3 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 </script>
-
-<style scoped>
-/* Ambil tinggi navbar supaya section hero tidak tertutup */
-#hero {
-  margin-top: 80px; /* ganti sesuai tinggi navbar */
-}
-
-/* Opsional: bisa juga pakai padding-top */
-.header {
-  height: 80px; /* contoh tinggi navbar */
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  #hero {
-    margin-top: 60px;
-  }
-}
-</style>
