@@ -26,12 +26,14 @@ const router = createRouter({
 
     {
       path: '/',
+      path: '/teams',
       name: 'teams',
       component: TeamsView,
     },
 
     {
       path: '/',
+      path: '/riders',
       name: 'riders',
       component: RidersView,
     },
@@ -39,16 +41,31 @@ const router = createRouter({
     {
       path: '/',
       name: 'race-shcedule',
+      path: '/race-schedule',
+      name: 'race-schedule',
       component: ScheduleView,
     },
 
     {
       path: '/',
+      path: '/contact',
       name: 'contact',
       component: ContactView,
     },
 
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    } else {
+      return { top: 0 }
+    }
+  }
 })
 
 export default router
