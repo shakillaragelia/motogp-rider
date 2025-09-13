@@ -8,12 +8,12 @@
       <!-- NAVBAR -->
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><RouterLink to="/" class="active">Home</RouterLink></li>
-          <li><RouterLink to="/about">About Us</RouterLink></li>
-          <li><RouterLink to="/riders">Riders</RouterLink></li>
-          <li><RouterLink to="/teams">Teams Details</RouterLink></li>
-          <li><RouterLink to="/race-schedule">Race Schedule</RouterLink></li>
-          <li><RouterLink to="/contact">Contact</RouterLink></li>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#riders">Riders</a></li>
+          <li><a href="#teams">Teams Details</a></li>
+          <li><a href="#schedule">Race Schedule</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

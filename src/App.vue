@@ -1,4 +1,5 @@
 <script setup>
+import AppFooter from './components/AppFooter.vue';
 import AppHeader from './components/AppHeader.vue'
 import AboutView from './views/AboutView.vue';
 import ContactView from './views/ContactView.vue';
@@ -27,6 +28,7 @@ import TeamsView from './views/TeamsView.vue';
   </section>
   <section id="contact">
     <ContactView />
+    <AppFooter></AppFooter>
   </section>
 </template>
 
