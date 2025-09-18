@@ -1,35 +1,12 @@
 <script setup>
 import AppFooter from './components/AppFooter.vue';
-import AppHeader from './components/AppHeader.vue'
-import AboutView from './views/AboutView.vue';
-import ContactView from './views/ContactView.vue';
-import HomeView from './views/HomeView.vue';
-import RidersView from './views/RidersView.vue';
-import ScheduleView from './views/ScheduleView.vue';
-import TeamsView from './views/TeamsView.vue';
-</script> 
+import AppHeader from './components/AppHeader.vue';
+</script>
 
 <template>
   <AppHeader />
-  <section id="home">
-    <HomeView />
-  </section>
-  <section id="about">
-    <AboutView />
-  </section>
-  <section id="riders">
-    <RidersView />
-  </section>
-  <section id="teams">
-    <TeamsView />
-  </section>
-  <section id="schedule">
-    <ScheduleView />
-  </section>
-  <section id="contact">
-    <ContactView />
-    <AppFooter></AppFooter>
-  </section>
+  <router-view />
+  <AppFooter />
 </template>
 
 <style scoped>
@@ -97,5 +74,9 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+
+  html {
+  scroll-behavior: smooth;
+}
 }
 </style>

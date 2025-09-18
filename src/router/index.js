@@ -1,10 +1,11 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import TeamsView from '@/views/TeamsView.vue'
-import RidersView from '@/views/RidersView.vue'
-import ScheduleView from '@/views/ScheduleView.vue'
-import ContactView from '@/views/ContactView.vue'
 import AboutView from '../views/AboutView.vue'
+import RidersView from '../views/RidersView.vue'
+import TeamsView from '../views/TeamsView.vue'
+import ScheduleView from '../views/ScheduleView.vue'
+import ContactView from '../views/ContactView.vue'
+import RiderDetailView from '../views/RiderDetailView.vue'
 
 const routes = [
   { path: '/', component: HomeView },
@@ -12,7 +13,8 @@ const routes = [
   { path: '/riders', component: RidersView },
   { path: '/teams', component: TeamsView },
   { path: '/race-schedule', component: ScheduleView },
-  { path: '/contact', component: ContactView }
+  { path: '/contact', component: ContactView },
+  { path: '/rider/:slug', component: RiderDetailView }
 ]
 
 const router = createRouter({

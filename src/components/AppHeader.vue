@@ -1,19 +1,36 @@
 <template>
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-      <RouterLink to="/" class="logo d-flex align-items-center">
+      <component
+        :is="isHome ? 'a' : RouterLink"
+        :href="isHome ? '#home' : null"
+        :to="!isHome ? '/' : null"
+        class="logo d-flex align-items-center"
+      >
         <img src="/img/motoGPlogo.png" alt="Riders Card Logo" class="sitename" />
-      </RouterLink>
+      </component>
 
       <!-- NAVBAR -->
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#riders">Riders</a></li>
-          <li><a href="#teams">Teams Details</a></li>
-          <li><a href="#schedule">Race Schedule</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li>
+            <component :is="isHome ? 'a' : RouterLink" :href="isHome ? '#home' : null" :to="!isHome ? '/' : null">Home</component>
+          </li>
+          <li>
+            <component :is="isHome ? 'a' : RouterLink" :href="isHome ? '#about' : null" :to="!isHome ? '/about' : null">About Us</component>
+          </li>
+          <li>
+            <component :is="isHome ? 'a' : RouterLink" :href="isHome ? '#riders' : null" :to="!isHome ? '/riders' : null">Riders</component>
+          </li>
+          <li>
+            <component :is="isHome ? 'a' : RouterLink" :href="isHome ? '#teams' : null" :to="!isHome ? '/teams' : null">Teams Details</component>
+          </li>
+          <li>
+            <component :is="isHome ? 'a' : RouterLink" :href="isHome ? '#schedule' : null" :to="!isHome ? '/race-schedule' : null">Race Schedule</component>
+          </li>
+          <li>
+            <component :is="isHome ? 'a' : RouterLink" :href="isHome ? '#contact' : null" :to="!isHome ? '/contact' : null">Contact</component>
+          </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -24,22 +41,17 @@
   <section id="hero" class="hero section">
     <div class="hero-container">
       <div class="hero-content">
-         <img src="/img/motoGPlogo.png" alt="MotoGP Logo" class="hero-logo" />
+        <img src="/img/motoGPlogo.png" alt="MotoGP Logo" class="hero-logo" />
         <h1>Faster. Forward. Fearless.</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis magna vel dolor mattis hendrerit. Vestibulum sodales dignissim ipsum id commodo.</p>
-        <!-- <div class="cta-buttons">
-          <a href="#" class="btn-apply">Apply Now</a>
-          <a href="#" class="btn-tour">Campus Tour</a>
-        </div> -->
-        <!-- <div class="announcement">
-          <div class="announcement-badge">New</div>
-          <p>Fall 2025 Applications Open - Early Decision Deadline December 15</p>
-        </div> -->
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
+import { computed } from 'vue'
+const route = useRoute()
+const isHome = computed(() => route.path === '/')
 </script>

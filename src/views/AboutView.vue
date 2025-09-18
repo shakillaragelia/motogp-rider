@@ -1,11 +1,7 @@
 <template>
-    <AboutMotogp>
-  </AboutMotogp>
+      <AboutMotogp/>
 </template>
 
 <script setup>
-import AboutMotogp from '@/components/AboutMotogp.vue'
+import AboutMotogp from '../components/AboutMotogp.vue'
 </script>
-
-<style scoped>
-</style>

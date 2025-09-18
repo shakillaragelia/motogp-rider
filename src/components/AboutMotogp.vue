@@ -28,18 +28,18 @@ const cards = [
     link: '/rider/marcmarquez'
   },
   {
-    img: '/assets/img/education/activities-9.webp',
-    alt: 'Cultural Events',
-    title: 'Cultural Diversity',
-    desc: 'Ut enim ad minima veniam quis nostrum exercitationem ullam corporis suscipit',
-    link: '/rider/cultural-diversity'
+    img: '/img/rider/marcmarquez.jpeg',
+    alt: 'Marc Marquez',
+    title: 'Marc Marquez',
+    desc: 'Marc Marquez || DUCATI LENOVO TEAM',
+    link: '/rider/marcmarquez'
   },
   {
-    img: '/assets/img/education/activities-3.webp',
-    alt: 'Innovation Hub',
-    title: 'Innovation Hub',
-    desc: 'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam',
-    link: '/rider/innovation-hub'
+    img: '/img/rider/marcmarquez.jpeg',
+    alt: 'Marc Marquez',
+    title: 'Marc Marquez',
+    desc: 'Marc Marquez || DUCATI LENOVO TEAM',
+    link: '/rider/marcmarquez'
   }
 ]
 </script>
