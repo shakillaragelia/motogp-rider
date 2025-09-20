@@ -983,6 +983,7 @@ section,
 }
 
 .hero .hero-container .hero-content h1 {
+  font-family: 'Audiowide', sans-serif;
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 20px;
@@ -996,6 +997,7 @@ section,
 }
 
 .hero .hero-container .hero-content p {
+  font-family: 'Audiowide', sans-serif;
   font-size: 1.25rem;
   margin-bottom: 30px;
 }

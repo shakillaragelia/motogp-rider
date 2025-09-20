@@ -32,7 +32,10 @@
       <div class="hero-content">
         <img src="/img/motoGPlogo.png" alt="MotoGP Logo" class="hero-logo" />
         <h1>Faster. Forward. Fearless.</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis magna vel dolor mattis hendrerit. Vestibulum sodales dignissim ipsum id commodo.</p>
+        <p>Welcome to the most exciting sport on earth.
+The world’s most fearless riders. The fastest bikes.
+The most forward-thinking manufacturers.
+One winner. Be part of it.</p>
       </div>
     </div>
   </section>
