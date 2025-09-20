@@ -58,8 +58,7 @@
           <div
             v-for="(member, index) in team"
             :key="index"
-            class="team-member"
-          >
+            class="team-member">
             <div class="member-photo">
               <img :src="member.photo" :alt="member.role" class="img-fluid" />
               <div class="member-overlay">

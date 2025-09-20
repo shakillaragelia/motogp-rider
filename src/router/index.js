@@ -5,7 +5,7 @@ import RidersView from '../views/RidersView.vue'
 import TeamsView from '../views/TeamsView.vue'
 import ScheduleView from '../views/ScheduleView.vue'
 import ContactView from '../views/ContactView.vue'
-import RiderDetailView from '../views/RiderDetailView.vue'
+import RiderDetail from '../components/RiderDetail.vue'
 
 const routes = [
   { path: '/', component: HomeView },
@@ -14,7 +14,7 @@ const routes = [
   { path: '/teams', component: TeamsView },
   { path: '/race-schedule', component: ScheduleView },
   { path: '/contact', component: ContactView },
-  { path: '/rider/:slug', component: RiderDetailView }
+  { path: '/rider/:slug', component: RiderDetail }
 ]
 
 const router = createRouter({
