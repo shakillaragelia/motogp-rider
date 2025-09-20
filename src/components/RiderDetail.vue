@@ -1,6 +1,58 @@
+<script setup>
+import { useRoute } from 'vue-router'
+import { ref } from 'vue'
+
+// Ambil slug dari URL
+const route = useRoute()
+const slug = ref(route.params.slug)
+
+// Data team
+const team = [
+  {
+    name: "James Wilson",
+    role: "Vice Principal",
+    photo: '/img/rider/marcmarquez.jpeg',
+    description: "Nunc dignissim risus id metus molestie tempor. Cras vestibulum bibendum augue praesent mattis.",
+  },
+  {
+    name: "Elena Rodriguez",
+    role: "Academic Coordinator",
+    photo: '/img/rider/marcmarquez.jpeg',
+    description: "Praesent sapien massa convallis a pellentesque nec egestas non nisi cras adipiscing.",
+  },
+  {
+    name: "Michael Chen",
+    role: "Student Affairs Director",
+    photo: '/img/rider/marcmarquez.jpeg',
+    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.",
+  },
+  {
+    name: "Sarah Mitchell",
+    role: "Curriculum Head",
+    photo: '/img/rider/marcmarquez.jpeg',
+    description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.",
+  },
+  {
+    name: "David Kumar",
+    role: "Operations Manager",
+    photo: '/img/rider/marcmarquez.jpeg',
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.",
+  },
+  {
+    name: "Lisa Anderson",
+    role: "Admissions Director",
+    photo: '/img/rider/marcmarquez.jpeg',
+    description: "Ut enim ad minima veniam quis nostrum exercitationem ullam corporis suscipit laboriosam.",
+  },
+]
+</script>
+
 <template>
   <section id="leadership" class="leadership section">
     <div class="container">
+      <!-- Rider slug tampil di sini -->
+      <h2> {{ slug }}</h2>
+
       <!-- Intro -->
       <div class="intro-section">
         <div class="content-wrapper">
@@ -92,72 +144,17 @@
               <i class="bi bi-lightbulb"></i>
               <span>Innovation-driven educational approach</span>
             </div>
-            <div class="point">
-              <i class="bi bi-people"></i>
-              <span>Student-centered leadership practices</span>
-            </div>
-            <div class="point">
-              <i class="bi bi-graph-up"></i>
-              <span>Continuous improvement mindset</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</template>
-
-<script>
-export default {
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: "Leadershipsection",
-  data() {
-    return {
-      team: [
-        {
-          name: "James Wilson",
-          role: "Vice Principal",
-          photo: '/img/rider/marcmarquez.jpeg',
-          description:
-            "Nunc dignissim risus id metus molestie tempor. Cras vestibulum bibendum augue praesent mattis.",
-        },
-        {
-          name: "Elena Rodriguez",
-          role: "Academic Coordinator",
-          photo: '/img/rider/marcmarquez.jpeg',
-          description:
-            "Praesent sapien massa convallis a pellentesque nec egestas non nisi cras adipiscing.",
-        },
-        {
-          name: "Michael Chen",
-          role: "Student Affairs Director",
-          photo: '/img/rider/marcmarquez.jpeg',
-          description:
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.",
-        },
-        {
-          name: "Sarah Mitchell",
-          role: "Curriculum Head",
-          photo: '/img/rider/marcmarquez.jpeg',
-          description:
-            "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.",
-        },
-        {
-          name: "David Kumar",
-          role: "Operations Manager",
-          photo: '/img/rider/marcmarquez.jpeg',
-          description:
-            "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.",
-        },
-        {
-          name: "Lisa Anderson",
-          role: "Admissions Director",
-          photo: '/img/rider/marcmarquez.jpeg',
-          description:
-            "Ut enim ad minima veniam quis nostrum exercitationem ullam corporis suscipit laboriosam.",
-        },
-      ],
-    };
-  },
-};
-</script>
+                        <div class="point">
+                          <i class="bi bi-people"></i>
+                          <span>Student-centered leadership practices</span>
+                        </div>
+                        <div class="point">
+                          <i class="bi bi-graph"></i>
+                          <span>Data-driven decision making</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </template>
