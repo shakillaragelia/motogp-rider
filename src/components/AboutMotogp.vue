@@ -1,23 +1,4 @@
 <template>
-  <div>
-    <!-- Highlights Section -->
-    <div class="highlights-section">
-      <div class="row g-4">
-        <div class="col-lg-4" v-for="(card, idx) in cards" :key="idx">
-          <div class="highlight-card">
-            <div class="highlight-image">
-              <img :src="card.img" :alt="card.alt" class="img-fluid" />
-            </div>
-            <div class="highlight-content">
-              <h5>{{ card.title }}</h5>
-              <p>{{ card.desc }}</p>
-              <RouterLink :to="card.link" class="btn btn-primary mt-2">View More</RouterLink>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- History Section -->
     <section id="history" class="history section">
       <div class="container">
@@ -27,8 +8,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="values-header text-center mb-4">
-                <span class="section-badge">Our Foundation</span>
-                <h2 class="section-heading">Core Values &amp; Principles</h2>
+                <span class="section-badge">Race Class</span>
+                <h2 class="section-heading">Race Class &amp; Teams</h2>
               </div>
             </div>
           </div>
@@ -36,21 +17,21 @@
             <div class="col-lg-4">
               <div class="value-block">
                 <div class="value-number">01</div>
-                <h3>Innovation</h3>
+                <h3>MotoGP</h3>
                 <p>Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar.</p>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="value-block">
                 <div class="value-number">02</div>
-                <h3>Integrity</h3>
+                <h3>Moto2</h3>
                 <p>Vestibulum ac diam sit amet quam vehicula elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="value-block">
                 <div class="value-number">03</div>
-                <h3>Excellence</h3>
+                <h3>Moto3</h3>
                 <p>Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh.</p>
               </div>
             </div>
@@ -111,32 +92,7 @@
 
       </div>
     </section>
-  </div>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
-const cards = [
-  {
-    img: '/img/rider/marcmarquez.jpeg',
-    alt: 'Marc Marquez',
-    title: 'Marc Marquez',
-    desc: 'Marc Marquez || DUCATI LENOVO TEAM',
-    link: '/rider/marcmarquez'
-  },
-  {
-    img: '/img/rider/marcmarquez.jpeg',
-    alt: 'Marc Marquez',
-    title: 'Marc Marquez',
-    desc: 'Marc Marquez || DUCATI LENOVO TEAM',
-    link: '/rider/marcmarquez'
-  },
-  {
-    img: '/img/rider/marcmarquez.jpeg',
-    alt: 'Marc Marquez',
-    title: 'Marc Marquez',
-    desc: 'Marc Marquez || DUCATI LENOVO TEAM',
-    link: '/rider/marcmarquez'
-  }
-]
 </script>
