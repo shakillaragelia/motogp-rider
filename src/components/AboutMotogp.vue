@@ -55,7 +55,7 @@
             <div class="col-lg-6">
               <div class="accomplishments-content">
                 <span class="section-badge">Our History</span>
-                <h2 class="section-heading">How Our Adrenaline Start In Our Blood.</h2>
+                <h2 class="section-heading">Adrenaline Run In Our Blood.</h2>
                 <p class="section-text">MotoGP berawal dari kejuaraan dunia balap motor yang digelar FIM pada tahun 1949, menjadikannya ajang balap motor tertua di dunia. Awalnya terdiri dari beberapa kelas mesin kecil hingga 500cc, lalu berevolusi menjadi kelas utama MotoGP pada 2002 dengan mesin prototipe empat-tak. Hingga kini, MotoGP dikenal sebagai puncak kompetisi balap roda dua, melahirkan legenda-legenda besar dan menjadi simbol kecepatan serta teknologi tertinggi di dunia motor.</p>
                 <div class="achievements-grid">
                   <div class="achievement-item">

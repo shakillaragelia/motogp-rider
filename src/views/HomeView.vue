@@ -25,7 +25,6 @@ onMounted(async () => {
   await nextTick()
   observer = new window.IntersectionObserver(
   (entries) => {
-    // Ambil entry yang paling dekat dengan atas viewport (positif/negatif)
     const visible = entries
       .filter(entry => entry.isIntersecting)
       .map(entry => ({
@@ -61,7 +60,6 @@ onBeforeUnmount(() => {
 <template>
   <section id="home">
     <RidersCards />
-     <div style="height: 60vh;"></div>
   </section>
   <section id="about">
     <AboutMotogp />
@@ -80,9 +78,10 @@ onBeforeUnmount(() => {
   </section>
 </template>
 
-<style>
+<style scoped>
 section {
-  min-height: 100vh;
+  padding: 16px 0;      /* Lebih rapat antar section */
+  min-height: auto;
   scroll-margin-top: 100px; 
 }
 </style>
