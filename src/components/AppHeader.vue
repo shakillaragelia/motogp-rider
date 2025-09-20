@@ -12,28 +12,17 @@
 
       <!-- NAVBAR -->
       <nav id="navmenu" class="navmenu">
-        <ul>
-          <li>
-            <component :is="isHome ? 'a' : RouterLink" :href="isHome ? '#home' : null" :to="!isHome ? '/' : null">Home</component>
-          </li>
-          <li>
-            <component :is="isHome ? 'a' : RouterLink" :href="isHome ? '#about' : null" :to="!isHome ? '/about' : null">About Us</component>
-          </li>
-          <li>
-            <component :is="isHome ? 'a' : RouterLink" :href="isHome ? '#riders' : null" :to="!isHome ? '/riders' : null">Riders</component>
-          </li>
-          <li>
-            <component :is="isHome ? 'a' : RouterLink" :href="isHome ? '#teams' : null" :to="!isHome ? '/teams' : null">Teams Details</component>
-          </li>
-          <li>
-            <component :is="isHome ? 'a' : RouterLink" :href="isHome ? '#schedule' : null" :to="!isHome ? '/race-schedule' : null">Race Schedule</component>
-          </li>
-          <li>
-            <component :is="isHome ? 'a' : RouterLink" :href="isHome ? '#contact' : null" :to="!isHome ? '/contact' : null">Contact</component>
-          </li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+  <ul>
+    <li><RouterLink to="/" class="nav-link">Home</RouterLink></li>
+    <li><RouterLink to="/about" class="nav-link">About</RouterLink></li>
+    <li><RouterLink to="/riders" class="nav-link">Riders</RouterLink></li>
+    <li><RouterLink to="/teams" class="nav-link">Teams</RouterLink></li>
+    <li><RouterLink to="/race-schedule" class="nav-link">Schedule</RouterLink></li>
+    <li><RouterLink to="/contact" class="nav-link">Contact</RouterLink></li>
+  </ul>
+</nav>
+
+      <!-- .navbar -->
     </div>
   </header>
 

@@ -8540,7 +8540,28 @@ section {
   min-height: 100vh;
   scroll-margin-top: 100px; /* sesuaikan dengan tinggi header */
 }
+
+
+.navmenu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
 }
+
+.navmenu .nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.navmenu .nav-link.router-link-active {
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+
+
+}
+
+
 
 
 
