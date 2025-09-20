@@ -109,7 +109,7 @@
 </template>
 
 <script setup>
-// Tidak ada script khusus
+
 </script>
 
 <style scoped>
