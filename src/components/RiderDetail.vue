@@ -1,36 +1,51 @@
 <script setup>
 import { useRoute } from 'vue-router'
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 
-// Ambil slug dari URL (tidak ditampilkan, tapi bisa dipakai untuk logic)
 const route = useRoute()
 const slug = ref(route.params.slug)
 
-// Gambar slider untuk featured leader
-const leaderImages = [
-  '/img/rider/marcmarquez.jpeg',
-  '/img/rider/marcmarquez.jpeg',
-  '/img/rider/marcmarquez.jpeg'
+// Data semua rider
+const riders = [
+  {
+    slug: 'marcmarquez',
+    name: 'Marc Marquez Alenta',
+    team: 'MotoGP Ducati Lenovo Team Rider',
+    bio: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris viverra veniam sit amet lacus cursus venenatis. Etiam consectetur aliquam lorem quis viverra.',
+    images: [
+      '/img/rider/marcmarquez.jpeg',
+      '/img/rider/marcmarquez.jpeg',
+      '/img/rider/marcmarquez.jpeg'
+    ]
+  },
+  
 ]
+
+// Ambil data rider sesuai slug
+const rider = computed(() => riders.find(r => r.slug === slug.value))
+
+// Slider logic
 const currentImage = ref(0)
 let intervalId = null
 
 function goToImage(idx) {
+  if (!rider.value) return
   if (idx === currentImage.value) return
   currentImage.value = idx
 }
 function nextImage() {
-  currentImage.value = (currentImage.value + 1) % leaderImages.length
+  if (!rider.value) return
+  currentImage.value = (currentImage.value + 1) % rider.value.images.length
 }
 
 onMounted(() => {
-  intervalId = setInterval(nextImage, 3000) // Ganti gambar tiap 3 detik
+  intervalId = setInterval(nextImage, 3000)
 })
 onUnmounted(() => {
   clearInterval(intervalId)
 })
 
-// Data team
+// Data team (dummy, bisa kamu sesuaikan)
 const team = [
   {
     name: "James Wilson",
@@ -77,16 +92,7 @@ const team = [
       <!-- Intro -->
       <div class="intro-section">
         <div class="content-wrapper">
-          <span class="intro-label">Leadership Excellence</span>
-          <h2 class="intro-title">
-            Visionary Leaders Shaping Tomorrow's Education
-          </h2>
-          <p class="intro-description">
-            Pellentesque habitant morbi tristique senectus et netus et malesuada
-            fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae
-            ultricies eget, tempor sit amet ante. Donec eu libero sit amet quam
-            egestas semper.
-          </p>
+          <span class="intro-label">{{ rider?.name || 'Rider Not Found' }}</span>
         </div>
       </div>
 
@@ -97,16 +103,17 @@ const team = [
             <div class="slider-img-wrapper">
               <transition name="slide" mode="out-in">
                 <img
-                  :src="leaderImages[currentImage]"
+                  v-if="rider"
+                  :src="rider.images[currentImage]"
                   :key="currentImage"
-                  alt="Principal"
+                  :alt="rider.name"
                   class="img-fluid slider-img"
                 />
               </transition>
             </div>
-            <div class="slider-indicators">
+            <div class="slider-indicators" v-if="rider">
               <span
-                v-for="(img, idx) in leaderImages"
+                v-for="(img, idx) in rider.images"
                 :key="idx"
                 :class="['indicator', { active: idx === currentImage }]"
                 @click="goToImage(idx)"
@@ -114,12 +121,10 @@ const team = [
             </div>
           </div>
           <div class="leader-details">
-            <h3>Dr. Margaret Thompson</h3>
-            <span class="leader-title">Principal &amp; Educational Director</span>
+            <h3>{{ rider?.name || 'Rider Not Found' }}</h3>
+            <span class="leader-title">{{ rider?.team }}</span>
             <p class="leader-bio">
-              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-              posuere cubilia curae; Mauris viverra veniam sit amet lacus cursus
-              venenatis. Etiam consectetur aliquam lorem quis viverra.
+              {{ rider?.bio }}
             </p>
             <div class="leader-stats">
               <div class="stat-item">
@@ -162,33 +167,6 @@ const team = [
               <h4>{{ member.name }}</h4>
               <span class="member-role">{{ member.role }}</span>
               <p class="member-description">{{ member.description }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Philosophy -->
-      <div class="leadership-philosophy">
-        <div class="philosophy-content">
-          <h3>Our Leadership Philosophy</h3>
-          <p>
-            Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-            posuere cubilia curae. Donec rutrum congue leo eget malesuada. Nulla
-            porttitor accumsan tincidunt.
-          </p>
-          <div class="philosophy-points">
-            <div class="point">
-              <i class="bi bi-lightbulb"></i>
-              <span>Innovation-driven educational approach</span>
-            </div>
-            <div class="point">
-              <i class="bi bi-people"></i>
-              <span>Student-centered leadership practices</span>
-            </div>
-            <div class="point">
-              <i class="bi bi-graph"></i>
-              <span>Data-driven decision making</span>
             </div>
           </div>
         </div>
