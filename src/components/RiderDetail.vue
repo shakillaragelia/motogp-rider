@@ -18,11 +18,20 @@ const riders = [
       '/img/rider/marcmarquez.jpeg'
     ]
   },
-  
+  // Tambahkan rider lain di sini jika perlu
 ]
 
 // Ambil data rider sesuai slug
 const rider = computed(() => riders.find(r => r.slug === slug.value))
+
+// Dummy stat data (struktur seperti students-life)
+const riderStats = [
+  { label: 'WORLD CHAMPIONSHIPS', value: 8 },
+  { label: 'VICTORIES', value: 99 },
+  { label: 'PODIUMS', value: 164 },
+  { label: 'POLES', value: 102 },
+  { label: 'RACES', value: 283 }
+]
 
 // Slider logic
 const currentImage = ref(0)
@@ -93,6 +102,13 @@ const team = [
       <div class="intro-section">
         <div class="content-wrapper">
           <span class="intro-label">{{ rider?.name || 'Rider Not Found' }}</span>
+          <!-- Rider Stats Bar (menggunakan struktur students-life) -->
+          <div class="stats-grid rider-stats-custom">
+            <div class="stat-item" v-for="stat in riderStats" :key="stat.label">
+              <div class="stat-number">{{ stat.value }}</div>
+              <div class="stat-label">{{ stat.label }}</div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -242,5 +258,39 @@ const team = [
 }
 .indicator.active {
   background: #222;
+}
+
+/* Rider Stats Custom Style (seperti students-life) */
+.rider-stats-custom {
+  display: flex;
+  gap: 32px;
+  margin: 32px 0 24px 0;
+  justify-content: center;
+  flex-wrap: nowrap;                 
+}
+.rider-stats-custom .stat-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 32px;
+  min-width: 160px;
+  text-align: center;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;              /* <-- Biar tidak mengecil */
+}
+.rider-stats-custom .stat-label {
+  color: #888;
+  font-size: 1.1rem;
+  margin-top: 8px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.rider-stats-custom .stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 4px;
 }
 </style>
