@@ -33,6 +33,15 @@ const riderStats = [
   { label: 'RACES', value: 283 }
 ]
 
+// Tabs untuk stats
+const statTabs = [
+  { label: 'TOTAL', value: 'total' },
+  { label: 'MotoGP™', value: 'motogp' },
+  { label: 'Moto2™', value: 'moto2' },
+  { label: '125cc', value: 'cc125' }
+]
+const activeTab = ref('total')
+
 // Slider logic
 const currentImage = ref(0)
 let intervalId = null
@@ -102,7 +111,19 @@ const team = [
       <div class="intro-section">
         <div class="content-wrapper">
           <span class="intro-label">{{ rider?.name || 'Rider Not Found' }}</span>
-          <!-- Rider Stats Bar (menggunakan struktur students-life) -->
+          <!-- Rider Stats Tabs -->
+          <div class="rider-stats-tabs">
+            <button
+              v-for="tab in statTabs"
+              :key="tab.value"
+              :class="['rider-tab', { active: activeTab === tab.value }]"
+              @click="activeTab = tab.value"
+            >
+              <span v-if="tab.value === 'cc125'">125<sub>cc</sub></span>
+              <span v-else v-html="tab.label"></span>
+            </button>
+          </div>
+          <!-- Rider Stats Bar -->
           <div class="stats-grid rider-stats-custom">
             <div class="stat-item" v-for="stat in riderStats" :key="stat.label">
               <div class="stat-number">{{ stat.value }}</div>
@@ -278,7 +299,7 @@ const team = [
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-shrink: 0;              /* <-- Biar tidak mengecil */
+  flex-shrink: 0;
 }
 .rider-stats-custom .stat-label {
   color: #888;
@@ -292,5 +313,35 @@ const team = [
   font-weight: 700;
   color: #111;
   margin-bottom: 4px;
+}
+
+/* Rider Stats Tabs Style */
+.rider-stats-tabs {
+  display: flex;
+  gap: 18px;
+  margin: 32px 0 18px 0;
+  justify-content: center;
+}
+.rider-tab {
+  background: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  border: 1.5px solid #eee;
+}
+.rider-tab.active {
+  background: #c00;
+  color: #fff;
+  border: 1.5px solid #c00;
+}
+.rider-tab sub {
+  font-size: 0.8em;
+  bottom: 0;
+  position: relative;
 }
 </style>
