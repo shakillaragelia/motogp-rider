@@ -51,7 +51,7 @@ const team = [
   <section id="leadership" class="leadership section">
     <div class="container">
       <!-- Rider slug tampil di sini -->
-      <h2> {{ slug }}</h2>
+     <!--<h2> {{ slug }}</h2> --> 
 
       <!-- Intro -->
       <div class="intro-section">
