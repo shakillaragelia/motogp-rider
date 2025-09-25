@@ -136,28 +136,35 @@ const riderBio = [
                 <span class="stat-label">Education</span>
               </div>
             </div>
-            <!-- <div class="social-connect">
+             <div class="social-connect">
               <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
               <a href="#" class="social-link"><i class="bi bi-envelope"></i></a>
-              <a href="#" class="social-link"><i class="bi bi-globe"></i></a>
-            </div> -->
+              <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+            </div> 
           </div>
         </div>
         <div class="rider-main-right">
-          <h2 class="rider-bio-title">RIDER BIO</h2>
-          <div class="rider-bio-box">
-            <table>
-              <tbody>
-                <tr v-for="item in riderBio" :key="item.label">
-                  <td class="bio-label">{{ item.label }}</td>
-                  <td class="bio-value">{{ item.value }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+    <h2 class="rider-bio-title">RIDER BIO</h2>
+    <div class="rider-bio-box">
+      <table>
+        <tbody>
+          <tr v-for="item in riderBio" :key="item.label">
+            <td class="bio-label">{{ item.label }}</td>
+            <td class="bio-value">{{ item.value }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <!-- Pindahkan rider-story-box ke sini -->
+    <div class="rider-story-box">
+      <h2 class="rider-story-title">RIDER STORY</h2>
+      <p class="rider-story-content">
+        Marc Marquez, the Spanish rider from Cervera, is an eight-time World Champion who rose from 125cc to dominate MotoGP with Repsol Honda. Known for his aggressive style and consistency, he overcame serious injuries and setbacks to return stronger. In 2024, Marquez joined Gresini Ducati, achieving victories again and proving his resilience. Now, partnered with Pecco Bagnaia in the factory Ducati team for 2025, he chases his long-awaited ninth world title.
+      </p>
+    </div>
+  </div>
+</div>
+      </div>
   </section>
 </template>
 
@@ -348,6 +355,26 @@ const riderBio = [
 .rider-bio-box tr:last-child .bio-label,
 .rider-bio-box tr:last-child .bio-value {
   border-bottom: none;
+}
+.rider-story-box {
+  background: #f4f4f4;
+  border-radius: 8px;
+  padding: 24px 28px;
+  margin-top: 32px;
+  width: 100%;
+}
+.rider-story-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  font-family: inherit;
+}
+.rider-story-content {
+  color: #222;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin: 0;
 }
 @media (max-width: 900px) {
   .leadership-grid {
