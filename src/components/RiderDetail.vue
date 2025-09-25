@@ -5,7 +5,6 @@ import { ref, onMounted, onUnmounted, computed } from 'vue'
 const route = useRoute()
 const slug = ref(route.params.slug)
 
-// Data semua rider
 const riders = [
   {
     slug: 'marcmarquez',
@@ -18,7 +17,6 @@ const riders = [
       '/img/rider/marcmarquez.jpeg'
     ]
   },
- 
 ]
 
 const rider = computed(() => riders.find(r => r.slug === slug.value))
@@ -30,7 +28,6 @@ const riderStats = [
   { label: 'RACES', value: 283 }
 ]
 
-// Tabs untuk stats
 const statTabs = [
   { label: 'TOTAL', value: 'total' },
   { label: 'MotoGP™', value: 'motogp' },
@@ -39,7 +36,6 @@ const statTabs = [
 ]
 const activeTab = ref('total')
 
-// Slider logic
 const currentImage = ref(0)
 let intervalId = null
 
@@ -60,67 +56,33 @@ onUnmounted(() => {
   clearInterval(intervalId)
 })
 
-// Data team (dummy, bisa kamu sesuaikan)
-const team = [
-  {
-    name: "James Wilson",
-    role: "Vice Principal",
-    photo: '/img/rider/marcmarquez.jpeg',
-    description: "Nunc dignissim risus id metus molestie tempor. Cras vestibulum bibendum augue praesent mattis.",
-  },
-  {
-    name: "Elena Rodriguez",
-    role: "Academic Coordinator",
-    photo: '/img/rider/marcmarquez.jpeg',
-    description: "Praesent sapien massa convallis a pellentesque nec egestas non nisi cras adipiscing.",
-  },
-  {
-    name: "Michael Chen",
-    role: "Student Affairs Director",
-    photo: '/img/rider/marcmarquez.jpeg',
-    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.",
-  },
-  {
-    name: "Sarah Mitchell",
-    role: "Curriculum Head",
-    photo: '/img/rider/marcmarquez.jpeg',
-    description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.",
-  },
-  {
-    name: "David Kumar",
-    role: "Operations Manager",
-    photo: '/img/rider/marcmarquez.jpeg',
-    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.",
-  },
-  {
-    name: "Lisa Anderson",
-    role: "Admissions Director",
-    photo: '/img/rider/marcmarquez.jpeg',
-    description: "Ut enim ad minima veniam quis nostrum exercitationem ullam corporis suscipit laboriosam.",
-  },
+const riderBio = [
+  { label: 'BIKE', value: 'Ducati' },
+  { label: 'DATE OF BIRTH', value: '17/02/1993' },
+  { label: 'PLACE OF BIRTH', value: 'Cervera' },
+  { label: 'HEIGHT', value: '169 cm' },
+  { label: 'WEIGHT', value: '64 kg' }
 ]
+
 </script>
 
 <template>
   <section id="leadership" class="leadership section">
     <div class="container">
-      <!-- Intro -->
       <div class="intro-section">
         <div class="content-wrapper">
           <span class="intro-label">{{ rider?.name || 'Rider Not Found' }}</span>
-          <!-- Rider Stats Tabs -->
           <div class="rider-stats-tabs">
             <button
               v-for="tab in statTabs"
               :key="tab.value"
               :class="['rider-tab', { active: activeTab === tab.value }]"
-              @click="activeTab = tab.value"
-            >
+              @click="activeTab = tab.value">
               <span v-if="tab.value === 'cc125'">125<sub>cc</sub></span>
               <span v-else v-html="tab.label"></span>
             </button>
           </div>
-          <!-- Rider Stats Bar -->
+          
           <div class="stats-grid rider-stats-custom">
             <div class="stat-item" v-for="stat in riderStats" :key="stat.label">
               <div class="stat-number">{{ stat.value }}</div>
@@ -130,7 +92,6 @@ const team = [
         </div>
       </div>
 
-      <!-- Featured Leader with Slider -->
       <div class="leadership-grid">
         <div class="featured-leader">
           <div class="leader-image-large slider-container">
@@ -141,10 +102,10 @@ const team = [
                   :src="rider.images[currentImage]"
                   :key="currentImage"
                   :alt="rider.name"
-                  class="img-fluid slider-img"
-                />
+                  class="img-fluid slider-img"/>
               </transition>
             </div>
+
             <div class="slider-indicators" v-if="rider">
               <span
                 v-for="(img, idx) in rider.images"
@@ -154,6 +115,7 @@ const team = [
               ></span>
             </div>
           </div>
+
           <div class="leader-details">
             <h3>{{ rider?.name || 'Rider Not Found' }}</h3>
             <span class="leader-title">{{ rider?.team }}</span>
@@ -181,27 +143,17 @@ const team = [
             </div> -->
           </div>
         </div>
-
-        <!-- Team Members -->
-        <div class="leadership-team-grid">
-          <div
-            v-for="(member, index) in team"
-            :key="index"
-            class="team-member">
-            <div class="member-photo">
-              <img :src="member.photo" :alt="member.role" class="img-fluid" />
-              <div class="member-overlay">
-                <div class="member-social">
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
-                  <a href="#"><i class="bi bi-envelope"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="member-info">
-              <h4>{{ member.name }}</h4>
-              <span class="member-role">{{ member.role }}</span>
-              <p class="member-description">{{ member.description }}</p>
-            </div>
+        <div class="rider-main-right">
+          <h2 class="rider-bio-title">RIDER BIO</h2>
+          <div class="rider-bio-box">
+            <table>
+              <tbody>
+                <tr v-for="item in riderBio" :key="item.label">
+                  <td class="bio-label">{{ item.label }}</td>
+                  <td class="bio-value">{{ item.value }}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -345,5 +297,69 @@ const team = [
   font-size: 0.8em;
   bottom: 0;
   position: relative;
+}
+
+.rider-main-right {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 340px;
+  max-width: 440px;
+  margin-left: 40px;
+}
+.rider-bio-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+  font-family: inherit;
+}
+.rider-bio-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px 28px;
+  width: 100%;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
+}
+.rider-bio-box table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.rider-bio-box .bio-label {
+  color: #888;
+  font-weight: 700;
+  padding: 16px 0 8px 0;
+  width: 60%;
+  font-size: 1.08rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #eee;
+}
+.rider-bio-box .bio-value {
+  color: #222;
+  font-weight: 600;
+  padding: 16px 0 8px 0;
+  width: 40%;
+  font-size: 1.08rem;
+  text-align: right;
+  border-bottom: 1px solid #eee;
+}
+.rider-bio-box tr:last-child .bio-label,
+.rider-bio-box tr:last-child .bio-value {
+  border-bottom: none;
+}
+@media (max-width: 900px) {
+  .leadership-grid {
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+  }
+  .rider-main-right {
+    max-width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-top: 32px;
+  }
 }
 </style>
