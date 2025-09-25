@@ -11,20 +11,17 @@ const riders = [
     slug: 'marcmarquez',
     name: 'Marc Marquez Alenta',
     team: 'MotoGP Ducati Lenovo Team Rider',
-    bio: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris viverra veniam sit amet lacus cursus venenatis. Etiam consectetur aliquam lorem quis viverra.',
+    bio: 'Marc Márquez Alentà is a Spanish Grand Prix motorcycle road racer who races for the Ducati Lenovo Team. Widely considered as one of the greatest motorcycle racers of all time, he previously raced for the Ducati satellite team Gresini in 2024 and Honda factory team from his MotoGP debut in 2013 until 2023.',
     images: [
       '/img/rider/marcmarquez.jpeg',
       '/img/rider/marcmarquez.jpeg',
       '/img/rider/marcmarquez.jpeg'
     ]
   },
-  // Tambahkan rider lain di sini jika perlu
+ 
 ]
 
-// Ambil data rider sesuai slug
 const rider = computed(() => riders.find(r => r.slug === slug.value))
-
-// Dummy stat data (struktur seperti students-life)
 const riderStats = [
   { label: 'WORLD CHAMPIONSHIPS', value: 8 },
   { label: 'VICTORIES', value: 99 },
@@ -177,11 +174,11 @@ const team = [
                 <span class="stat-label">Education</span>
               </div>
             </div>
-            <div class="social-connect">
+            <!-- <div class="social-connect">
               <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
               <a href="#" class="social-link"><i class="bi bi-envelope"></i></a>
               <a href="#" class="social-link"><i class="bi bi-globe"></i></a>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -301,6 +298,11 @@ const team = [
   align-items: center;
   flex-shrink: 0;
 }
+
+.rider-stats-custom .stat-item:not(:first-child) {
+  border-left: 2px solid #222;
+}
+
 .rider-stats-custom .stat-label {
   color: #888;
   font-size: 1.1rem;
