@@ -1,10 +1,34 @@
 <script setup>
 import { useRoute } from 'vue-router'
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
-// Ambil slug dari URL
+// Ambil slug dari URL (tidak ditampilkan, tapi bisa dipakai untuk logic)
 const route = useRoute()
 const slug = ref(route.params.slug)
+
+// Gambar slider untuk featured leader
+const leaderImages = [
+  '/img/rider/marcmarquez.jpeg',
+  '/img/rider/marcmarquez.jpeg',
+  '/img/rider/marcmarquez.jpeg'
+]
+const currentImage = ref(0)
+let intervalId = null
+
+function goToImage(idx) {
+  if (idx === currentImage.value) return
+  currentImage.value = idx
+}
+function nextImage() {
+  currentImage.value = (currentImage.value + 1) % leaderImages.length
+}
+
+onMounted(() => {
+  intervalId = setInterval(nextImage, 3000) // Ganti gambar tiap 3 detik
+})
+onUnmounted(() => {
+  clearInterval(intervalId)
+})
 
 // Data team
 const team = [
@@ -50,9 +74,6 @@ const team = [
 <template>
   <section id="leadership" class="leadership section">
     <div class="container">
-      <!-- Rider slug tampil di sini -->
-     <!--<h2> {{ slug }}</h2> --> 
-
       <!-- Intro -->
       <div class="intro-section">
         <div class="content-wrapper">
@@ -69,11 +90,28 @@ const team = [
         </div>
       </div>
 
-      <!-- Featured Leader -->
+      <!-- Featured Leader with Slider -->
       <div class="leadership-grid">
         <div class="featured-leader">
-          <div class="leader-image-large">
-            <img src='/img/rider/marcmarquez.jpeg' alt="Principal" class="img-fluid" />
+          <div class="leader-image-large slider-container">
+            <div class="slider-img-wrapper">
+              <transition name="slide" mode="out-in">
+                <img
+                  :src="leaderImages[currentImage]"
+                  :key="currentImage"
+                  alt="Principal"
+                  class="img-fluid slider-img"
+                />
+              </transition>
+            </div>
+            <div class="slider-indicators">
+              <span
+                v-for="(img, idx) in leaderImages"
+                :key="idx"
+                :class="['indicator', { active: idx === currentImage }]"
+                @click="goToImage(idx)"
+              ></span>
+            </div>
           </div>
           <div class="leader-details">
             <h3>Dr. Margaret Thompson</h3>
@@ -144,17 +182,87 @@ const team = [
               <i class="bi bi-lightbulb"></i>
               <span>Innovation-driven educational approach</span>
             </div>
-                        <div class="point">
-                          <i class="bi bi-people"></i>
-                          <span>Student-centered leadership practices</span>
-                        </div>
-                        <div class="point">
-                          <i class="bi bi-graph"></i>
-                          <span>Data-driven decision making</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </template>
+            <div class="point">
+              <i class="bi bi-people"></i>
+              <span>Student-centered leadership practices</span>
+            </div>
+            <div class="point">
+              <i class="bi bi-graph"></i>
+              <span>Data-driven decision making</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+.leader-image-large.slider-container {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.slider-img-wrapper {
+  width: 100%;
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Animasi slide */
+.slide-enter-active, .slide-leave-active {
+  transition: all 0.4s cubic-bezier(.55,0,.1,1);
+}
+.slide-enter-from {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.slide-enter-to {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-leave-from {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-leave-to {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.slider-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+  gap: 8px;
+}
+.indicator {
+  display: block;
+  width: 32px;
+  height: 4px;
+  background: #ccc;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.indicator.active {
+  background: #222;
+}
+</style>
