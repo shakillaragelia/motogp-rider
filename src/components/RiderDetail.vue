@@ -63,7 +63,6 @@ const riderBio = [
   { label: 'HEIGHT', value: '169 cm' },
   { label: 'WEIGHT', value: '64 kg' }
 ]
-
 </script>
 
 <template>
@@ -137,9 +136,9 @@ const riderBio = [
               </div>
             </div>
              <div class="social-connect">
-              <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
-              <a href="#" class="social-link"><i class="bi bi-envelope"></i></a>
-              <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+              <a href="https://x.com/marcmarquez93" class="social-link"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="social-link"><i class="bi bi-tiktok"></i></a>
+              <a href="https://www.instagram.com/marcmarquez93" class="social-link"><i class="bi bi-instagram"></i></a>
             </div> 
           </div>
         </div>
@@ -155,17 +154,16 @@ const riderBio = [
         </tbody>
       </table>
     </div>
-    <!-- Pindahkan rider-story-box ke sini -->
     <div class="rider-story-box">
       <h2 class="rider-story-title">RIDER STORY</h2>
       <p class="rider-story-content">
         Marc Marquez, the Spanish rider from Cervera, is an eight-time World Champion who rose from 125cc to dominate MotoGP with Repsol Honda. Known for his aggressive style and consistency, he overcame serious injuries and setbacks to return stronger. In 2024, Marquez joined Gresini Ducati, achieving victories again and proving his resilience. Now, partnered with Pecco Bagnaia in the factory Ducati team for 2025, he chases his long-awaited ninth world title.
       </p>
+      </div>
     </div>
   </div>
 </div>
-      </div>
-  </section>
+</section>
 </template>
 
 <style scoped>
