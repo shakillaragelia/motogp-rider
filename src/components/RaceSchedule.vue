@@ -30,7 +30,30 @@
           <div class="race-location">{{ race.location }}</div>
         </div>
       </div>
-      <!-- (opsional) List view bisa ditambah sendiri -->
+<!-- Race List -->
+<div v-else-if="viewMode === 'list'" class="race-list">
+  <div
+    v-for="(race, idx) in races"
+    :key="race.id"
+    :class="['race-list-card', { 'up-next': idx === 0 }]"
+  >
+    <div class="race-list-info">
+      <div v-if="idx === 0" class="race-list-upnext">UP NEXT</div>
+      <div class="race-list-flag-date">
+        <img :src="race.flag" :alt="race.country" class="race-list-flag" />
+        <span class="race-list-date">{{ race.date }}</span>
+      </div>
+      <div class="race-list-title">
+        <span class="race-list-round">{{ race.round }}</span>
+        <span class="race-list-country">{{ race.country.toUpperCase() }}</span>
+      </div>
+      <div class="race-list-location">{{ race.location }}</div>
+    </div>
+    <div class="race-list-img">
+      <img :src="race.circuitImg" :alt="race.country + ' circuit'" />
+    </div>
+  </div>
+</div>
     </div>
   </section>
 </template>
@@ -48,7 +71,8 @@ const races = [
     country: 'Thailand',
     date: '27 FEB - 01 MAR',
     round: 1,
-    location: 'THAILAND'
+    location: 'THAILAND',
+    circuitImg: '/img/circuit/thailand.jpg'
   },
   {
     id: 2,
@@ -56,9 +80,9 @@ const races = [
     country: 'Brazil',
     date: '20 MAR - 22 MAR',
     round: 2,
-    location: 'BRAZIL'
+    location: 'BRAZIL',
+    circuitImg: '/img/circuit/brazil.jpg'
   },
-  // ...tambahkan data race lain sesuai kebutuhan
 ]
 </script>
 
@@ -173,6 +197,114 @@ const races = [
   color: #888;
   font-weight: 500;
 }
+
+.race-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.race-list-card {
+  display: flex;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.06);
+  min-height: 120px;
+  overflow: hidden;
+  position: relative;
+}
+.race-list-card.up-next {
+  background: #222;
+  color: #fff;
+}
+.race-list-info {
+  flex: 1;
+  padding: 24px 28px 18px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.race-list-upnext {
+  background: #e00;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 4px 14px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.race-list-flag-date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.race-list-flag {
+  width: 28px;
+  height: 18px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+.race-list-date {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #888;
+}
+.race-list-card.up-next .race-list-date,
+.race-list-card.up-next .race-list-location {
+  color: #fff;
+}
+.race-list-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.race-list-round {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.race-list-country {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+.race-list-location {
+  font-size: 1.05rem;
+  color: #888;
+  font-weight: 500;
+}
+.race-list-img {
+  width: 260px;
+  min-width: 180px;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.race-list-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 12px 12px 0;
+}
+@media (max-width: 900px) {
+  .race-list-card {
+    flex-direction: column;
+  }
+  .race-list-img {
+    width: 100%;
+    min-width: 0;
+    height: 160px;
+    border-radius: 0 0 12px 12px;
+  }
+  .race-list-img img {
+    border-radius: 0 0 12px 12px;
+  }
+}
+
 @media (max-width: 900px) {
   .race-grid {
     grid-template-columns: 1fr;
