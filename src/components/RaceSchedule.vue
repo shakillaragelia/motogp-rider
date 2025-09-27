@@ -44,7 +44,7 @@ const viewMode = ref('grid')
 const races = [
   {
     id: 1,
-    flag: '/img/flags/thailand.png',
+    flag: '/img/flag/thailand.png',
     country: 'Thailand',
     date: '27 FEB - 01 MAR',
     round: 1,
@@ -52,7 +52,7 @@ const races = [
   },
   {
     id: 2,
-    flag: '/img/flags/brazil.png',
+    flag: '/img/flag/brazil.png',
     country: 'Brazil',
     date: '20 MAR - 22 MAR',
     round: 2,
