@@ -72,7 +72,7 @@ const races = [
     date: '27 FEB - 01 MAR',
     round: 1,
     location: 'THAILAND',
-    circuitImg: '/img/circuit/thailand.jpg'
+    circuitImg: '/img/circuit/buriram.jpg'
   },
   {
     id: 2,
@@ -81,7 +81,7 @@ const races = [
     date: '20 MAR - 22 MAR',
     round: 2,
     location: 'BRAZIL',
-    circuitImg: '/img/circuit/brazil.jpg'
+    circuitImg: '/img/circuit/aytonsenna.jpg'
   },
 ]
 </script>
