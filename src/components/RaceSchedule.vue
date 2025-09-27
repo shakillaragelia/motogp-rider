@@ -132,6 +132,8 @@ const races = [
 }
 .race-grid {
   display: grid;
+  border: 2px solid #888;
+  border-radius: 12px;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 18px;
 }
@@ -154,6 +156,7 @@ const races = [
 .race-card.up-next .race-location,
 .race-card.up-next .race-date {
   color: #fff;
+  box-shadow: #222;
 }
 .race-flag {
   display: flex;
@@ -207,6 +210,7 @@ const races = [
   display: flex;
   background: #fff;
   border-radius: 12px;
+  border: 2px solid rgb(176, 157, 157);
   box-shadow: 0 2px 12px 0 rgba(0,0,0,0.06);
   min-height: 120px;
   overflow: hidden;
