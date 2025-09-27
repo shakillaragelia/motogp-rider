@@ -30,13 +30,12 @@
           <div class="race-location">{{ race.location }}</div>
         </div>
       </div>
-<!-- Race List -->
-<div v-else-if="viewMode === 'list'" class="race-list">
-  <div
-    v-for="(race, idx) in races"
+
+      <div v-else-if="viewMode === 'list'" class="race-list">
+  
+  <div  v-for="(race, idx) in races"
     :key="race.id"
-    :class="['race-list-card', { 'up-next': idx === 0 }]"
-  >
+    :class="['race-list-card', { 'up-next': idx === 0 }]">
     <div class="race-list-info">
       <div v-if="idx === 0" class="race-list-upnext">UP NEXT</div>
       <div class="race-list-flag-date">
@@ -132,7 +131,6 @@ const races = [
 }
 .race-grid {
   display: grid;
-  border: 2px solid #888;
   border-radius: 12px;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 18px;
@@ -140,6 +138,7 @@ const races = [
 .race-card {
   background: #fff;
   border-radius: 12px;
+  border: 0.5px solid #222;
   box-shadow: 0 2px 12px 0 rgba(0,0,0,0.06);
   padding: 24px 28px 18px 28px;
   display: flex;
