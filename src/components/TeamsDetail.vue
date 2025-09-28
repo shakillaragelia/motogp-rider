@@ -6,8 +6,7 @@
           v-for="cat in categories"
           :key="cat"
           :class="['filter-btn', { active: selectedCategory === cat }]"
-          @click="selectedCategory = cat"
-        >
+          @click="selectedCategory = cat">
           {{ cat }}
         </button>
       </div>
@@ -17,7 +16,8 @@
           class="team-card"
           v-for="team in filteredTeams"
           :key="team.name"
-        >
+          :style="{ background: team.bg }">
+          <div class="team-bg-name">{{ team.name }}</div>
           <div class="team-image">
             <img :src="team.img" :alt="team.name" />
           </div>
@@ -36,52 +36,51 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-const categories = ['MotoGP', 'Moto2', 'Moto3', 'MotoE']
+const categories = ['MotoGP', 'Moto2', 'Moto3']
 const selectedCategory = ref('MotoGP')
 
 const teams = [
   {
     name: 'APRILIA RACING',
-    img: '/img/bike/aprilia.png',
+    img: '/img/team/apriliaracing.webp',
     riders: ['Jorge Martin', 'Marco Bezzecchi'],
-    category: 'MotoGP'
+    category: 'MotoGP',
+    bg: 'linear-gradient(135deg, #23243a 80%, #23243a 100%)'
   },
   {
     name: 'BK8 GRESINI RACING MOTOGP',
-    img: '/img/bike/gresini.png',
+    img: '/img/team/gresini.webp',
     riders: ['Fermin Aldeguer', 'Alex Marquez'],
-    category: 'MotoGP'
+    category: 'MotoGP',
+    bg: 'linear-gradient(135deg, #2c3137 80%, #2c3137 100%)'
   },
   {
     name: 'DUCATI LENOVO TEAM',
-    img: '/img/bike/ducati.png',
+    img: '/img/team/ducati.webp',
     riders: ['Francesco Bagnaia', 'Marc Marquez'],
-    category: 'MotoGP'
+    category: 'MotoGP',
+    bg: 'linear-gradient(135deg, #3a2323 80%, #3a2323 100%)'
   },
   {
     name: 'HONDA HRC CASTROL',
-    img: '/img/bike/honda.png',
+    img: '/img/team/honda.png',
     riders: ['Luca Marini', 'Joan Mir'],
-    category: 'MotoGP'
+    category: 'MotoGP',
+    bg: 'linear-gradient(135deg, #23243a 80%, #d60000 100%)'
   },
-  // Tambahkan data Moto2, Moto3, MotoE di bawah ini
   {
     name: 'SAG TEAM',
-    img: '/img/bike/sag.png',
+    img: '/img/team/sag.png',
     riders: ['Rider Moto2 A', 'Rider Moto2 B'],
-    category: 'Moto2'
+    category: 'Moto2',
+    bg: 'linear-gradient(135deg, #1a2a3a 80%, #1a2a3a 100%)'
   },
   {
     name: 'REDOX PRUSTELGP',
-    img: '/img/bike/prustel.png',
+    img: '/img/team/prustel.png',
     riders: ['Rider Moto3 A', 'Rider Moto3 B'],
-    category: 'Moto3'
-  },
-  {
-    name: 'AVINTIA ESPONSORAMA',
-    img: '/img/bike/avintia.png',
-    riders: ['Rider MotoE A', 'Rider MotoE B'],
-    category: 'MotoE'
+    category: 'Moto3',
+    bg: 'linear-gradient(135deg, #2a1a3a 80%, #2a1a3a 100%)'
   }
 ]
 
@@ -131,7 +130,6 @@ const filteredTeams = computed(() =>
   gap: 32px;
 }
 .team-card {
-  background: linear-gradient(135deg, #23243a 80%, #23243a 100%);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12);
@@ -140,15 +138,35 @@ const filteredTeams = computed(() =>
   min-height: 420px;
   position: relative;
 }
+.team-bg-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Audiowide', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.08);
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  text-align: center;
+  white-space: pre-line;
+  width: 90%;
+}
 .team-image img {
   width: 100%;
   height: 260px;
   object-fit: contain;
   display: block;
   background: transparent;
+  z-index: 2;
+  position: relative;
 }
 .team-info {
   padding: 1.5rem;
+  z-index: 3;
+  position: relative;
 }
 .team-name {
   font-family: 'Audiowide', sans-serif;
@@ -165,6 +183,6 @@ const filteredTeams = computed(() =>
 .team-riders li {
   color: #cedff4;
   font-size: 1rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 </style>
