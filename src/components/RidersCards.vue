@@ -39,7 +39,7 @@ const cards = [
     country: 'Spain',
     team: 'Aprilia Racing',
     bg: 'linear-gradient(135deg, #23243a 80%, #23243a 100%)',
-    bgNumber: '01'
+    bgNumber: '1'
   },
   {
     img: '/img/rider/johanzarco.webp',
@@ -50,7 +50,7 @@ const cards = [
     country: 'France',
     team: 'CASTROL Honda LCR',
     bg: 'linear-gradient(135deg, #2c3137 80%, #2c3137 100%)',
-    bgNumber: '125'
+    bgNumber: '5'
   },
   {
     img: '/img/rider/lucamarini.webp',
@@ -61,7 +61,7 @@ const cards = [
     country: 'Italy',
     team: 'Honda HRC Castrol',
     bg: 'linear-gradient(135deg, #3a2323 80%, #3a2323 100%)',
-    bgNumber: '21'
+    bgNumber: '10'
   },
   {
     img: '/img/rider/maverick-vinales.png',
@@ -122,8 +122,8 @@ function goToDetail(card) {
   position: absolute;
   top: 18px;
   left: 18px;
-  background: #fff;
-  color: #181d23;
+  background: transparent;
+  color: #cedff4;
   font-weight: 800;
   font-size: 1.4rem;
 }
@@ -134,9 +134,14 @@ function goToDetail(card) {
   object-fit: cover;
   margin-right: 4px;
 }
-.rider-card:hover {
-  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18);
-  transform: translateY(-4px) scale(1.02);
+.rider-bg-number {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-size: 10rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.15);
+  z-index: 1;
 }
 </style>
  
