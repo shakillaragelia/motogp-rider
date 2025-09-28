@@ -29,6 +29,8 @@
 import { useRouter } from 'vue-router'
 const router = useRouter()
 
+
+//for dummy data before fetch from API
 const cards = [
   {
     img: '/img/rider/jorgemartin.webp',
@@ -41,6 +43,7 @@ const cards = [
     bg: 'linear-gradient(135deg, #23243a 80%, #23243a 100%)',
     bgNumber: '1'
   },
+
   {
     img: '/img/rider/johanzarco.webp',
     alt: 'Johan Zarco',
@@ -52,6 +55,7 @@ const cards = [
     bg: 'linear-gradient(135deg, #2c3137 80%, #2c3137 100%)',
     bgNumber: '5'
   },
+
   {
     img: '/img/rider/lucamarini.webp',
     alt: 'Luca Marini',

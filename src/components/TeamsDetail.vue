@@ -1,119 +1,103 @@
 <template>
-  <!-- Students Life Block Section -->
-  <section id="students-life-block" class="students-life-block section">
-    <!-- Section Title -->
-    <div class="container section-title">
-      <h2>Students Life</h2>
-      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-    </div>
-    <!-- End Section Title -->
-
+  <section class="teams-section">
     <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6">
-          <div class="content-wrapper">
-            <div class="section-tag">
-              Student Life
-            </div>
-            <h2>Excepteur sint occaecat cupidatat non proident sunt in culpa</h2>
-            <p class="description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa.</p>
-
-            <div class="stats-row">
-              <div class="stat-item">
-                <span class="stat-number">85+</span>
-                <span class="stat-label">Student Organizations</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">150+</span>
-                <span class="stat-label">Annual Events</span>
-              </div>
-            </div>
-
-            <div class="action-links">
-              <a href="student-life.html" class="primary-link">Explore Student Life</a>
-            </div>
+      <h2 class="teams-title">/ <span>OFFICIAL</span></h2>
+      <div class="teams-grid">
+        <div class="team-card" v-for="team in teams" :key="team.name">
+          <div class="team-image">
+            <img :src="team.img" :alt="team.name" />
           </div>
-        </div>
-
-        <div class="col-lg-6">
-          <div class="visual-grid">
-            <div class="main-visual">
-              <img src='/img/rider/marcmarquez.jpeg' alt="Campus Life" class="img-fluid">
-              <div class="overlay-badge">
-                <i class="bi bi-heart-fill"></i>
-                <span>Campus Community</span>
-              </div>
-            </div>
-
-            <div class="secondary-visuals">
-              <div class="small-visual">
-                <img src='/img/rider/marcmarquez.jpeg' alt="Student Activities" class="img-fluid">
-                <div class="visual-caption">
-                  <span>Student Activities</span>
-                </div>
-              </div>
-
-              <div class="small-visual">
-                <img src='/img/rider/marcmarquez.jpeg' alt="Academic Excellence" class="img-fluid">
-                <div class="visual-caption">
-                  <span>Academic Excellence</span>
-                </div>
-              </div>
-            </div>
+          <div class="team-info">
+            <h3 class="team-name">{{ team.name }}</h3>
+            <ul class="team-riders">
+              <li v-for="rider in team.riders" :key="rider">{{ rider }}</li>
+            </ul>
           </div>
         </div>
       </div>
-
-      <!-- HIGHLIGHT SECTION WILL USE FOR RIDER CARD (COMPONENT) AT HOME (VIEW) -->
-      <div class="highlights-section">
-        <div class="row g-4">
-          <div class="col-lg-4">
-            <div class="highlight-card">
-              <div class="highlight-image">
-                <img src='/img/rider/marcmarquez.jpeg' alt="Leadership Programs" class="img-fluid">
-              </div>
-              <div class="highlight-content">
-                <h5>Leadership Development</h5>
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="highlight-card">
-              <div class="highlight-image">
-                <img src='/img/rider/marcmarquez.jpeg' alt="Cultural Events" class="img-fluid">
-              </div>
-              <div class="highlight-content">
-                <h5>Cultural Diversity</h5>
-                <p>Ut enim ad minima veniam quis nostrum exercitationem ullam corporis suscipit</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="highlight-card">
-              <div class="highlight-image">
-                <img src='/img/rider/marcmarquez.jpeg' alt="Innovation Hub" class="img-fluid">
-              </div>
-              <div class="highlight-content">
-                <h5>Innovation Hub</h5>
-                <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>  <!-- END HIGHLIGHT SECTION -->
     </div>
   </section>
 </template>
 
 <script setup>
-
+const teams = [
+  {
+    name: 'APRILIA RACING',
+    img: '/img/bike/aprilia.png',
+    riders: ['Jorge Martin', 'Marco Bezzecchi']
+  },
+  {
+    name: 'BK8 GRESINI RACING MOTOGP',
+    img: '/img/bike/gresini.png',
+    riders: ['Fermin Aldeguer', 'Alex Marquez']
+  },
+  {
+    name: 'DUCATI LENOVO TEAM',
+    img: '/img/bike/ducati.png',
+    riders: ['Francesco Bagnaia', 'Marc Marquez']
+  },
+  {
+    name: 'HONDA HRC CASTROL',
+    img: '/img/bike/honda.png',
+    riders: ['Luca Marini', 'Joan Mir']
+  }
+]
 </script>
 
 <style scoped>
-.rider-detail {
-  padding: 2rem;
+.teams-section {
+  padding: 2rem 0;
+}
+.teams-title {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  color: #181d23;
+}
+.teams-title span {
+  color: #d60000;
+}
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 32px;
+}
+.team-card {
+  background: linear-gradient(135deg, #23243a 80%, #23243a 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+  position: relative;
+}
+.team-image img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+}
+.team-info {
+  padding: 1.5rem;
+}
+.team-name {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.team-riders {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.team-riders li {
+  color: #cedff4;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
 }
 </style>
