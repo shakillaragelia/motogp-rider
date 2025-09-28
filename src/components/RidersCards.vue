@@ -72,6 +72,8 @@ const cards = [
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 20px;
+  padding-left: 20px;   
+  padding-right: 20px;  
 }
 .rider-card {
   background: transparent;
