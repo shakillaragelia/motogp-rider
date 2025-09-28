@@ -1,5 +1,5 @@
 <template>
- <section class="teams-section">
+  <section class="teams-section">
     <div class="container">
       <div class="class-filter">
         <button
@@ -43,24 +43,28 @@ const teams = [
   {
     name: 'APRILIA RACING',
     img: '/img/bike/aprilia.png',
-    riders: ['Jorge Martin', 'Marco Bezzecchi']
+    riders: ['Jorge Martin', 'Marco Bezzecchi'],
+    category: 'MotoGP'
   },
   {
     name: 'BK8 GRESINI RACING MOTOGP',
     img: '/img/bike/gresini.png',
-    riders: ['Fermin Aldeguer', 'Alex Marquez']
+    riders: ['Fermin Aldeguer', 'Alex Marquez'],
+    category: 'MotoGP'
   },
   {
     name: 'DUCATI LENOVO TEAM',
     img: '/img/bike/ducati.png',
-    riders: ['Francesco Bagnaia', 'Marc Marquez']
+    riders: ['Francesco Bagnaia', 'Marc Marquez'],
+    category: 'MotoGP'
   },
   {
     name: 'HONDA HRC CASTROL',
     img: '/img/bike/honda.png',
-    riders: ['Luca Marini', 'Joan Mir']
+    riders: ['Luca Marini', 'Joan Mir'],
+    category: 'MotoGP'
   },
-
+  // Tambahkan data Moto2, Moto3, MotoE di bawah ini
   {
     name: 'SAG TEAM',
     img: '/img/bike/sag.png',
@@ -82,7 +86,8 @@ const teams = [
 ]
 
 const filteredTeams = computed(() =>
-  teams.filter(team => team.category === selectedCategory.value))
+  teams.filter(team => team.category === selectedCategory.value)
+)
 </script>
 
 <style scoped>
