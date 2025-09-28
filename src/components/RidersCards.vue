@@ -43,8 +43,8 @@ const cards = [
   },
   {
     img: '/img/rider/johanzarco.webp',
-    alt: 'Johann Zarco',
-    title: 'JOHANN ZARCO',
+    alt: 'Johan Zarco',
+    title: 'JOHAN ZARCO',
     rank: 5,
     flag: '/img/flag/france.png',
     country: 'France',
@@ -142,6 +142,29 @@ function goToDetail(card) {
   font-weight: 800;
   color: rgba(255, 255, 255, 0.15);
   z-index: 1;
+}
+.rider-name {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.rider-team {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.rider-country {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin: 0;
 }
 </style>
  
