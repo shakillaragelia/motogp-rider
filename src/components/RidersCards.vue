@@ -1,6 +1,13 @@
 <template>
   <div class="riders-grid">
-    <div class="rider-card" v-for="card in cards" :key="card.title">
+    <div
+      class="rider-card"
+      v-for="card in cards"
+      :key="card.title"
+      @click="goToDetail(card)"
+      tabindex="0"
+      role="button">
+
       <div class="rider-img-bg" :style="{ background: card.bg }">
         <img :src="card.img" :alt="card.alt" class="rider-img" />
         <div class="rider-rank">{{ card.rank }}</div>
@@ -19,6 +26,9 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
 const cards = [
   {
     img: '/img/rider/jorgemartin.webp',
@@ -65,6 +75,12 @@ const cards = [
     bgNumber: '12'
   }
 ]
+
+function goToDetail(card) {
+  // Ganti 'rider-slug' sesuai struktur route detail kamu
+  router.push(`/rider/${card.title.toLowerCase().replace(/\s+/g, '')}`)
+}
+
 </script>
 
 <style scoped>
@@ -84,6 +100,8 @@ const cards = [
   display: flex;
   flex-direction: column;
   min-height: 420px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
 }
 .rider-img-bg {
   position: relative;
@@ -110,11 +128,15 @@ const cards = [
   font-size: 1.4rem;
 }
 .rider-flag {
-  width: 24px;    /* lebih kecil dari sebelumnya */
+  width: 24px;   
   height: 16px;
   border-radius: 2px;
   object-fit: cover;
   margin-right: 4px;
+}
+.rider-card:hover {
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18);
+  transform: translateY(-4px) scale(1.02);
 }
 </style>
  
