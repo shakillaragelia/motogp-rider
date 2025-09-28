@@ -62,13 +62,6 @@ const teams = [
     bg: 'linear-gradient(135deg, #3a2323 80%, #3a2323 100%)'
   },
   {
-    name: 'HONDA HRC CASTROL',
-    img: '/img/team/honda.png',
-    riders: ['Luca Marini', 'Joan Mir'],
-    category: 'MotoGP',
-    bg: 'linear-gradient(135deg, #23243a 80%, #d60000 100%)'
-  },
-  {
     name: 'SAG TEAM',
     img: '/img/team/sag.png',
     riders: ['Rider Moto2 A', 'Rider Moto2 B'],
