@@ -155,6 +155,7 @@ const filteredTeams = computed(() =>
   background: transparent;
   z-index: 2;
   position: relative;
+  margin-top: 32px; 
 }
 .team-info {
   padding: 1.5rem;

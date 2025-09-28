@@ -1,15 +1,16 @@
 <template>
-  <div>
+  <section class="rider-section">
+    <div class="container">
     <div class="class-filter">
       <button
         v-for="cat in categories"
         :key="cat"
         :class="['filter-btn', { active: selectedCategory === cat }]"
-        @click="selectedCategory = cat"
-      >
+        @click="selectedCategory = cat">
         {{ cat }}
       </button>
-    </div>
+      </div>
+       <h2 class="rider-title">/ <span>OFFICIAL</span></h2>
     <div class="riders-grid">
       <div
         class="rider-card"
@@ -17,8 +18,7 @@
         :key="card.title"
         @click="goToDetail(card)"
         tabindex="0"
-        role="button"
-      >
+        role="button">
         <div class="rider-img-bg" :style="{ background: card.bg }">
           <img :src="card.img" :alt="card.alt" class="rider-img" />
           <div class="rider-rank">{{ card.rank }}</div>
@@ -35,6 +35,7 @@
       </div>
     </div>
   </div>
+  </section>
 </template>
 
 <script setup>
@@ -166,6 +167,19 @@ function goToDetail(card) {
 .filter-btn.active {
   background: #d60000;
   color: #fff;
+}
+.rider-section {
+  padding: 2rem 0;
+}
+.rider-title {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  color: #181d23;
+}
+.rider-title span {
+  color: #d60000;
 }
 .riders-grid {
   display: grid;
