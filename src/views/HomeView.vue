@@ -3,7 +3,6 @@ import { onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import RidersCards from '../components/RidersCards.vue'
 import AboutMotogp from '../components/AboutMotogp.vue'
-//import RiderDetail from '../components/RiderDetail.vue'
 import TeamsDetail from '../components/TeamsDetail.vue'
 import RaceSchedule from '../components/RaceSchedule.vue'
 import ContactInfo from '../components/ContactInfo.vue'
@@ -78,7 +77,7 @@ onBeforeUnmount(() => {
 <style scoped>
 section {
   padding: 16px 0;      /* Lebih rapat antar section */
-  min-height: auto;
+  min-height: 400px;
   scroll-margin-top: 100px; 
 }
 </style>
