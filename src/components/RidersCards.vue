@@ -68,15 +68,15 @@ const cards = [
     bgNumber: '10'
   },
   {
-    img: '/img/rider/maverick-vinales.png',
-    alt: 'Maverick Vinales',
-    title: 'MAVERICK VINALES',
-    rank: 12,
+  img: '/img/rider/marquez.webp',
+    alt: 'Marc Marquez',
+    title: 'Marc Marquez',
+    rank: 93,
     flag: '/img/flag/spain.png',
     country: 'Spain',
-    team: 'Red Bull KTM Tech3',
-    bg: 'linear-gradient(135deg, #23243a 80%, #23243a 100%)',
-    bgNumber: '12'
+    team: 'DUCATI LENOVO TEAM',
+    bg: 'linear-gradient(135deg, #3a2323 80%, #3a2323 100%)',
+    bgNumber: '93'
   }
 ]
 
