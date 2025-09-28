@@ -6,11 +6,12 @@ import TeamsView from '../views/TeamsView.vue'
 import ScheduleView from '../views/ScheduleView.vue'
 import ContactView from '../views/ContactView.vue'
 import RiderDetail from '../components/RiderDetail.vue'
+import RidersCards from '@/components/RidersCards.vue'
 
 const routes = [
   { path: '/', component: HomeView },
   { path: '/about', component: AboutView },
-  { path: '/riders', component: RidersView },
+  { path: '/riders', component: RidersCards },
   { path: '/teams', component: TeamsView },
   { path: '/race-schedule', component: ScheduleView },
   { path: '/contact', component: ContactView },

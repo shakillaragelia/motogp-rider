@@ -3,7 +3,7 @@ import { onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import RidersCards from '../components/RidersCards.vue'
 import AboutMotogp from '../components/AboutMotogp.vue'
-import RiderDetail from '../components/RiderDetail.vue'
+//import RiderDetail from '../components/RiderDetail.vue'
 import TeamsDetail from '../components/TeamsDetail.vue'
 import RaceSchedule from '../components/RaceSchedule.vue'
 import ContactInfo from '../components/ContactInfo.vue'
@@ -63,9 +63,6 @@ onBeforeUnmount(() => {
   </section>
   <section id="about">
     <AboutMotogp />
-  </section>
-  <section id="riders">
-    <RiderDetail />
   </section>
   <section id="teams">
     <TeamsDetail />
