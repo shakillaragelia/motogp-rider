@@ -21,7 +21,7 @@
 <script setup>
 const cards = [
   {
-    img: '/img/rider/jorgemartin.jpg',
+    img: '/img/rider/jorgemartin.webp',
     alt: 'Jorge Martin',
     title: 'JORGE MARTIN',
     rank: 1,
@@ -32,7 +32,7 @@ const cards = [
     bgNumber: '01'
   },
   {
-    img: '/img/rider/johann-zarco.png',
+    img: '/img/rider/johanzarco.webp',
     alt: 'Johann Zarco',
     title: 'JOHANN ZARCO',
     rank: 5,
@@ -43,7 +43,7 @@ const cards = [
     bgNumber: '125'
   },
   {
-    img: '/img/rider/luca-marini.png',
+    img: '/img/rider/lucamarini.webp',
     alt: 'Luca Marini',
     title: 'LUCA MARINI',
     rank: 10,
@@ -71,7 +71,7 @@ const cards = [
 .riders-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
+  gap: 20px;
 }
 .rider-card {
   background: transparent;
@@ -106,6 +106,13 @@ const cards = [
   color: #181d23;
   font-weight: 800;
   font-size: 1.4rem;
+}
+.rider-flag {
+  width: 24px;    /* lebih kecil dari sebelumnya */
+  height: 16px;
+  border-radius: 2px;
+  object-fit: cover;
+  margin-right: 4px;
 }
 </style>
  
