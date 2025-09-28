@@ -21,7 +21,7 @@
 <script setup>
 const cards = [
   {
-    img: '/img/rider/jorge-martin.png',
+    img: '/img/rider/jorgemartin.jpg',
     alt: 'Jorge Martin',
     title: 'JORGE MARTIN',
     rank: 1,
