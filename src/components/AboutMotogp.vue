@@ -23,7 +23,7 @@
             </div>
             <div class="col-lg-4">
               <div class="value-block">
-                <div class="value-number">02</div>
+                <div class="value-number">021</div>
                 <h3>Moto2</h3>
                 <p>Moto2 merupakan kelas menengah yang menjadi jenjang penting sebelum menuju MotoGP. Seluruh motor menggunakan mesin seragam 765cc dari Triumph, sehingga yang membedakan adalah pengembangan sasis, pengaturan elektronik, serta kemampuan pembalap. Kelas ini sering disebut sebagai gerbang utama menuju MotoGP.</p>
               </div>
