@@ -9,4 +9,4 @@ import { TeamController } from './team.controller';
   providers: [TeamServiceService],
   controllers: [TeamController],
 })
-export class RiderModule {}
+export class TeamModule {}

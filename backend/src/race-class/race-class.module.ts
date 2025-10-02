@@ -9,4 +9,4 @@ import { RaceController } from './race-class.controller';
   providers: [RaceServiceService],
   controllers: [RaceController],
 })
-export class RiderModule {}
+export class RaceClassModule {}
