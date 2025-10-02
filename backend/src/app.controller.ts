@@ -14,7 +14,7 @@ import { RaceClass } from './race-class/race-class.entity';
       password: '',
       database: 'motogp_db',
       entities: [Rider, Team, RaceClass],
-      synchronize: true, // ❗buat development aja, nanti produksi matiin
+      synchronize: true, //buat development aja, nanti produksi matiin
     }),
   ],
 })
