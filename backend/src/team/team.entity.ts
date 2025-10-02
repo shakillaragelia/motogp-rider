@@ -1,5 +1,12 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToMany,
+  ManyToOne,
+} from 'typeorm';
 import { Rider } from 'src/rider/rider.entity';
+import { RaceClass } from 'src/race-class/race-class.entity';
 
 @Entity()
 export class Team {
@@ -9,10 +16,9 @@ export class Team {
   @Column()
   name: string;
 
-  @Column()
-  country: string;
-
-  // Relasi ke Rider
   @OneToMany(() => Rider, (rider) => rider.team)
   riders: Rider[];
+
+  @ManyToOne(() => RaceClass, (raceClass) => raceClass.teams)
+  raceClass: RaceClass;
 }
