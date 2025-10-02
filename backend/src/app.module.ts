@@ -4,7 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }), // baca .env
+    ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: process.env.DB_HOST,
@@ -13,7 +13,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       password: process.env.DB_PASS,
       database: process.env.DB_NAME,
       autoLoadEntities: true,
-      synchronize: true, // auto create table (kayak migrate otomatis)
+      synchronize: true,
     }),
   ],
 })
