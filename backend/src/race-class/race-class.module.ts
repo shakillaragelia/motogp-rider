@@ -6,7 +6,7 @@ import { RaceController } from './race-class.controller';
 
 @Module({
   imports: [TypeOrmModule.forFeature([RaceClass])],
-  providers: [RaceServiceService],
+  providers: [RaceService],
   controllers: [RaceController],
 })
 export class RaceClassModule {}
