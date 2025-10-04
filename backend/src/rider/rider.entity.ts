@@ -1,6 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
-import { Team } from 'src/team/team.entity';
-import { RaceClass } from 'src/race-class/race-class.entity';
+import { Team } from '../team/team.entity';
 
 @Entity()
 export class Rider {
@@ -12,7 +11,4 @@ export class Rider {
 
   @ManyToOne(() => Team, (team) => team.riders)
   team: Team;
-
-  @ManyToOne(() => RaceClass, (raceClass) => raceClass.riders)
-  raceClass: RaceClass;
 }

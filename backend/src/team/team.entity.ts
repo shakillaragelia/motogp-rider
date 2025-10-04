@@ -2,11 +2,11 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  OneToMany,
   ManyToOne,
+  OneToMany,
 } from 'typeorm';
-import { Rider } from 'src/rider/rider.entity';
-import { RaceClass } from 'src/race-class/race-class.entity';
+import { RaceClass } from '../race-class/race-class.entity';
+import { Rider } from '../rider/rider.entity';
 
 @Entity()
 export class Team {
@@ -16,9 +16,9 @@ export class Team {
   @Column()
   name: string;
 
-  @OneToMany(() => Rider, (rider) => rider.team)
-  riders: Rider[];
-
   @ManyToOne(() => RaceClass, (raceClass) => raceClass.teams)
   raceClass: RaceClass;
+
+  @OneToMany(() => Rider, (rider) => rider.team)
+  riders: Rider[];
 }
