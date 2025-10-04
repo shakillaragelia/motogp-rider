@@ -12,7 +12,7 @@ export class RaceService {
 
   findAll(): Promise<RaceClass[]> {
     return this.raceClassRepository.find({
-      relations: ['rider', 'team'],
+      relations: ['teams'], // ✅ perbaikan di sini
     });
   }
 
