@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { RiderModule } from './rider/rider.module';
 import { TeamModule } from './team/team.module';
 import { RaceClassModule } from './race-class/race-class.module';
+import { AppController } from './app.controller'; // <-- tambahkan ini
 
 @Module({
   imports: [
@@ -27,5 +28,6 @@ import { RaceClassModule } from './race-class/race-class.module';
     TeamModule,
     RaceClassModule,
   ],
+  controllers: [AppController],
 })
 export class AppModule {}
