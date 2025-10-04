@@ -12,7 +12,7 @@ export class TeamService {
 
   findAll(): Promise<Team[]> {
     return this.teamRepository.find({
-      relations: ['rider', 'raceClass'],
+      relations: ['riders', 'raceClass'], // ✅ perbaikan di sini
     });
   }
 
