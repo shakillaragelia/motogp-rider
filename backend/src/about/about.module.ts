@@ -6,7 +6,7 @@ import { AboutController } from './about.controller';
 
 @Module({
   imports: [TypeOrmModule.forFeature([About])],
-  providers: [AboutService],
   controllers: [AboutController],
+  providers: [AboutService],
 })
 export class AboutModule {}
