@@ -10,13 +10,15 @@ export class ContactService {
     private contactRepository: Repository<Contact>,
   ) {}
 
-  findAll(): Promise<Contact[]> {
-    return this.contactRepository.find({
-      order: { createdAt: 'DESC' },
-    });
+  findAll() {
+    return this.contactRepository.find();
   }
 
-  create(data: Partial<Contact>): Promise<Contact> {
+  findOne(id: number) {
+    return this.contactRepository.findOne({ where: { id } });
+  }
+
+  create(data: Partial<Contact>) {
     const contact = this.contactRepository.create(data);
     return this.contactRepository.save(contact);
   }
