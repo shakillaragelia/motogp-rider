@@ -4,19 +4,24 @@ import {
   Post,
   Put,
   Delete,
-  Body,
   Param,
+  Body,
 } from '@nestjs/common';
 import { RaceScheduleService } from './race-schedule.service';
 import { RaceSchedule } from './race-schedule.entity';
 
-@Controller('race-schedule')
+@Controller('race-schedules')
 export class RaceScheduleController {
   constructor(private readonly raceScheduleService: RaceScheduleService) {}
 
   @Get()
   findAll(): Promise<RaceSchedule[]> {
     return this.raceScheduleService.findAll();
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: number) {
+    return this.raceScheduleService.findOne(id);
   }
 
   @Post()
