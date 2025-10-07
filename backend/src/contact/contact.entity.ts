@@ -11,14 +11,14 @@ export class Contact {
   id: number;
 
   @Column()
-  name: string; // nama pengirim
+  name: string;
 
   @Column()
-  email: string; // email pengirim
+  email: string;
 
   @Column({ type: 'text' })
-  message: string; // isi pesan
+  message: string;
 
   @CreateDateColumn()
-  createdAt: Date; // waktu otomatis tersimpan
+  createdAt: Date;
 }
