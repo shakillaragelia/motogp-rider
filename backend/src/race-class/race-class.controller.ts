@@ -7,12 +7,12 @@ import {
   Body,
   Param,
 } from '@nestjs/common';
-import { RaceService } from './race-class.service';
+import { RaceClassService } from './race-class.service';
 import { RaceClass } from './race-class.entity';
 
 @Controller('race-classes')
-export class RaceController {
-  constructor(private readonly raceClassService: RaceService) {}
+export class RaceClassController {
+  constructor(private readonly raceClassService: RaceClassService) {}
 
   @Get()
   findAll(): Promise<RaceClass[]> {
