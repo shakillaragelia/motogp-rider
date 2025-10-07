@@ -4,20 +4,33 @@ import { Repository } from 'typeorm';
 import { RaceClass } from './race-class.entity';
 
 @Injectable()
-export class RaceService {
+export class RaceClassService {
   constructor(
     @InjectRepository(RaceClass)
     private raceClassRepository: Repository<RaceClass>,
   ) {}
 
-  findAll(): Promise<RaceClass[]> {
-    return this.raceClassRepository.find({
-      relations: ['teams'], // ✅ perbaikan di sini
+  findAll() {
+    return this.raceClassRepository.find({ relations: ['teams'] });
+  }
+
+  findOne(id: number) {
+    return this.raceClassRepository.findOne({
+      where: { id },
+      relations: ['teams'],
     });
   }
 
-  create(raceClassData: Partial<RaceClass>): Promise<RaceClass> {
-    const raceClass = this.raceClassRepository.create(raceClassData);
+  create(data: Partial<RaceClass>) {
+    const raceClass = this.raceClassRepository.create(data);
     return this.raceClassRepository.save(raceClass);
+  }
+
+  update(id: number, data: Partial<RaceClass>) {
+    return this.raceClassRepository.update(id, data);
+  }
+
+  remove(id: number) {
+    return this.raceClassRepository.delete(id);
   }
 }
