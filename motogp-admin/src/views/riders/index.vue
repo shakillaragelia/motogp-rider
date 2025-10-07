@@ -4,6 +4,9 @@
       <el-form-item label="Nama" prop="name">
         <el-input v-model="rider.name" placeholder="Nama Pembalap" />
       </el-form-item>
+      <el-form-item label="Nomor Motor" prop="number">
+        <el-input v-model="rider.number" placeholder="Nomor Motor" type="number" />
+      </el-form-item>
       <el-form-item label="Tempat, Tanggal Lahir" prop="birthPlaceDate">
         <el-input v-model="rider.birthPlaceDate" placeholder="Contoh: Madrid, 29 Januari 1998" />
       </el-form-item>
@@ -23,6 +26,19 @@
       <el-form-item label="Biodata" prop="bio">
         <el-input type="textarea" v-model="rider.bio" placeholder="Biodata Pembalap" :autosize="{ minRows: 2, maxRows: 4 }" />
       </el-form-item>
+      <el-form-item label="Gambar Pembalap" prop="image">
+        <el-upload
+          class="upload-demo"
+          action=""
+          :show-file-list="false"
+          :before-upload="handleImageUpload"
+        >
+          <el-button slot="trigger" type="primary">Pilih Gambar</el-button>
+          <div v-if="rider.image" style="margin-top: 10px;">
+            <img :src="rider.image" alt="Pembalap" style="max-width: 200px;" />
+          </div>
+        </el-upload>
+      </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitRider">Tambah Pembalap</el-button>
       </el-form-item>
@@ -39,21 +55,25 @@ export default {
     return {
       rider: {
         name: '',
+        number: '',
         birthPlaceDate: '',
         country: '',
         teamId: null,
         raceClass: '',
-        bio: ''
+        bio: '',
+        image: ''
       },
       teams: [],
       raceClasses: ['MotoGP', 'Moto2', 'Moto3', 'MotoE'],
       rules: {
         name: [{ required: true, message: 'Nama wajib diisi', trigger: 'blur' }],
+        number: [{ required: true, message: 'Nomor motor wajib diisi', trigger: 'blur' }],
         birthPlaceDate: [{ required: true, message: 'Tempat, tanggal lahir wajib diisi', trigger: 'blur' }],
         country: [{ required: true, message: 'Negara wajib diisi', trigger: 'blur' }],
         teamId: [{ required: true, message: 'Team wajib dipilih', trigger: 'change' }],
         raceClass: [{ required: true, message: 'Kelas balap wajib dipilih', trigger: 'change' }],
-        bio: [{ required: true, message: 'Biodata wajib diisi', trigger: 'blur' }]
+        bio: [{ required: true, message: 'Biodata wajib diisi', trigger: 'blur' }],
+        image: [{ required: true, message: 'Gambar pembalap wajib diisi', trigger: 'change' }]
       }
     }
   },
@@ -66,6 +86,14 @@ export default {
         this.teams = res.data
       })
     },
+    handleImageUpload(file) {
+      const reader = new FileReader()
+      reader.onload = (e) => {
+        this.rider.image = e.target.result
+      }
+      reader.readAsDataURL(file)
+      return false // prevent auto upload
+    },
     submitRider() {
       this.$refs.riderForm.validate(valid => {
         if (valid) {
@@ -73,6 +101,7 @@ export default {
             .then(() => {
               this.$message.success('Pembalap berhasil ditambahkan!')
               this.$refs.riderForm.resetFields()
+              this.rider.image = ''
             })
             .catch(() => {
               this.$message.error('Gagal menambah pembalap')
