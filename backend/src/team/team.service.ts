@@ -10,14 +10,27 @@ export class TeamService {
     private teamRepository: Repository<Team>,
   ) {}
 
-  findAll(): Promise<Team[]> {
-    return this.teamRepository.find({
-      relations: ['riders', 'raceClass'], // ✅ perbaikan di sini
+  findAll() {
+    return this.teamRepository.find({ relations: ['riders', 'raceClass'] });
+  }
+
+  findOne(id: number) {
+    return this.teamRepository.findOne({
+      where: { id },
+      relations: ['riders', 'raceClass'],
     });
   }
 
-  create(teamData: Partial<Team>): Promise<Team> {
-    const team = this.teamRepository.create(teamData);
+  create(data: Partial<Team>) {
+    const team = this.teamRepository.create(data);
     return this.teamRepository.save(team);
+  }
+
+  update(id: number, data: Partial<Team>) {
+    return this.teamRepository.update(id, data);
+  }
+
+  remove(id: number) {
+    return this.teamRepository.delete(id);
   }
 }
