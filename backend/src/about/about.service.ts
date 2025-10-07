@@ -10,20 +10,24 @@ export class AboutService {
     private aboutRepository: Repository<About>,
   ) {}
 
-  findAll(): Promise<About[]> {
+  findAll() {
     return this.aboutRepository.find();
   }
 
-  create(data: Partial<About>): Promise<About> {
+  findOne(id: number) {
+    return this.aboutRepository.findOne({ where: { id } });
+  }
+
+  create(data: Partial<About>) {
     const about = this.aboutRepository.create(data);
     return this.aboutRepository.save(about);
   }
 
-  update(id: number, data: Partial<About>): Promise<any> {
+  update(id: number, data: Partial<About>) {
     return this.aboutRepository.update(id, data);
   }
 
-  remove(id: number): Promise<any> {
+  remove(id: number) {
     return this.aboutRepository.delete(id);
   }
 }
