@@ -5,9 +5,12 @@ export class About {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Column()
+  title: string; // contoh: "Tentang MotoGP World Championship"
+
   @Column({ type: 'text' })
-  content: string;
+  content: string; // isi konten utama
 
   @Column({ nullable: true })
-  image: string; // misal gambar banner “tentang MotoGP”
+  image: string; // gambar pendukung (opsional)
 }
