@@ -2,11 +2,11 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  ManyToOne,
   OneToMany,
+  ManyToOne,
 } from 'typeorm';
-import { RaceClass } from '../race-class/race-class.entity';
-import { Rider } from '../rider/rider.entity';
+import { Rider } from 'src/rider/rider.entity';
+import { RaceClass } from 'src/race-class/race-class.entity';
 
 @Entity()
 export class Team {
@@ -16,9 +16,26 @@ export class Team {
   @Column()
   name: string;
 
-  @ManyToOne(() => RaceClass, (raceClass) => raceClass.teams)
+  @Column()
+  country: string;
+
+  @Column()
+  principal: string;
+
+  // gambar motor, bukan logo
+  @Column({ nullable: true })
+  image: string;
+
+  @Column({ type: 'text', nullable: true })
+  description: string;
+
+  // hubungan ke kelas balap (MotoGP, Moto2, dll)
+  @ManyToOne(() => RaceClass, (raceClass) => raceClass.teams, {
+    onDelete: 'SET NULL',
+  })
   raceClass: RaceClass;
 
+  // satu tim punya banyak rider
   @OneToMany(() => Rider, (rider) => rider.team)
   riders: Rider[];
 }
