@@ -2,10 +2,10 @@ import {
   Controller,
   Get,
   Post,
-  Body,
-  Param,
   Put,
   Delete,
+  Param,
+  Body,
 } from '@nestjs/common';
 import { AboutService } from './about.service';
 import { About } from './about.entity';
@@ -19,8 +19,13 @@ export class AboutController {
     return this.aboutService.findAll();
   }
 
+  @Get(':id')
+  findOne(@Param('id') id: number) {
+    return this.aboutService.findOne(id);
+  }
+
   @Post()
-  create(@Body() data: Partial<About>): Promise<About> {
+  create(@Body() data: Partial<About>) {
     return this.aboutService.create(data);
   }
 
