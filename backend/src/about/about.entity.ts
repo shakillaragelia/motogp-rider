@@ -6,11 +6,11 @@ export class About {
   id: number;
 
   @Column()
-  title: string; // contoh: "Tentang MotoGP World Championship"
+  title: string;
 
   @Column({ type: 'text' })
-  content: string; // isi konten utama
+  content: string;
 
   @Column({ nullable: true })
-  image: string; // gambar pendukung (opsional)
+  image: string;
 }
