@@ -10,13 +10,17 @@ export class RaceScheduleService {
     private raceScheduleRepository: Repository<RaceSchedule>,
   ) {}
 
-  findAll(): Promise<RaceSchedule[]> {
+  findAll() {
     return this.raceScheduleRepository.find();
   }
 
-  create(data: Partial<RaceSchedule>): Promise<RaceSchedule> {
-    const race = this.raceScheduleRepository.create(data);
-    return this.raceScheduleRepository.save(race);
+  findOne(id: number) {
+    return this.raceScheduleRepository.findOne({ where: { id } });
+  }
+
+  create(data: Partial<RaceSchedule>) {
+    const schedule = this.raceScheduleRepository.create(data);
+    return this.raceScheduleRepository.save(schedule);
   }
 
   update(id: number, data: Partial<RaceSchedule>) {
