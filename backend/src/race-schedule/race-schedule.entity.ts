@@ -6,14 +6,17 @@ export class RaceSchedule {
   id: number;
 
   @Column()
-  circuit: string;
+  grandPrix: string; // contoh: "Qatar Grand Prix"
 
   @Column()
-  country: string;
+  country: string; // contoh: "Qatar"
 
   @Column({ type: 'date' })
-  date: string;
+  date: string; // tanggal balapan
 
   @Column({ nullable: true })
-  image: string;
+  circuitImage: string; // gambar sirkuit
+
+  @Column({ type: 'text', nullable: true })
+  description: string; // deskripsi singkat
 }
