@@ -37,6 +37,7 @@ import { AppController } from './app.controller';
 
       synchronize: true,
       logging: true,
+      dropSchema: true,
       autoLoadEntities: true,
     }),
 
