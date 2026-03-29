@@ -1,11 +1,11 @@
 <template>
   <div class="race-class-form-container">
     <el-form ref="raceClassForm" :model="raceClass" :rules="rules" label-width="120px" style="width: 400px; margin: 0 auto;">
-      <el-form-item label="ID" prop="id">
-        <el-input v-model="raceClass.id" placeholder="ID Kelas Balap" type="number" />
-      </el-form-item>
       <el-form-item label="Nama Kelas" prop="name">
-        <el-input v-model="raceClass.name" placeholder="Nama Kelas Balap (contoh: MotoGP)" />
+        <el-input v-model="raceClass.name" placeholder="Nama Kelas Balap " />
+      </el-form-item>
+      <el-form-item label="Deskripsi" prop="description">
+        <el-input v-model="raceClass.description" type="textarea" :rows="2" placeholder="Masukkan deskripsi kelas..." />
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitRaceClass">Tambah Kelas Balap</el-button>
@@ -22,11 +22,10 @@ export default {
   data() {
     return {
       raceClass: {
-        id: '',
-        name: ''
+        name: '',
+        description: ''
       },
       rules: {
-        id: [{ required: true, message: 'ID wajib diisi', trigger: 'blur' }],
         name: [{ required: true, message: 'Nama kelas wajib diisi', trigger: 'blur' }]
       }
     }
