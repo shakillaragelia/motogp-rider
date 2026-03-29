@@ -19,7 +19,7 @@
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "mysql2": "^3.15.1",
-    "typeorm": "^0.3.27",
+    "typeorm": "^0.3.17",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
   },

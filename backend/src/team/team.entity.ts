@@ -4,6 +4,7 @@ import {
   Column,
   OneToMany,
   ManyToOne,
+  JoinColumn,
 } from 'typeorm';
 import { Rider } from 'src/rider/rider.entity';
 import { RaceClass } from 'src/race-class/race-class.entity';
@@ -33,7 +34,11 @@ export class Team {
   @ManyToOne(() => RaceClass, (raceClass) => raceClass.teams, {
     onDelete: 'SET NULL',
   })
+  @JoinColumn({ name: 'raceClassId' })
   raceClass: RaceClass;
+
+  @Column({ nullable: true })
+  raceClassId: number;
 
   // satu tim punya banyak rider
   @OneToMany(() => Rider, (rider) => rider.team)

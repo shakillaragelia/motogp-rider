@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
 import { Team } from 'src/team/team.entity';
 import { RaceClass } from 'src/race-class/race-class.entity';
 
@@ -26,10 +26,18 @@ export class Rider {
   image: string;
 
   // Relasi ke Team (banyak rider dalam satu tim)
-  @ManyToOne(() => Team, (team) => team.riders)
+  @ManyToOne(() => Team, (team) => team.riders, { onDelete: 'SET NULL' })
+  @JoinColumn({ name: 'teamId' })
   team: Team;
 
+  @Column({ nullable: true })
+  teamId: number;
+
   // Relasi ke RaceClass (misal MotoGP, Moto2, dsb)
-  @ManyToOne(() => RaceClass, (raceClass) => raceClass.riders)
+  @ManyToOne(() => RaceClass, (raceClass) => raceClass.riders, { onDelete: 'SET NULL' })
+  @JoinColumn({ name: 'raceClassId' })
   raceClass: RaceClass;
+
+  @Column({ nullable: true })
+  raceClassId: number;
 }

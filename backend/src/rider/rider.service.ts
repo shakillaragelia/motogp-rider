@@ -20,4 +20,19 @@ export class RiderService {
     const rider = this.riderRepository.create(riderData);
     return this.riderRepository.save(rider);
   }
+
+  findOne(id: number) {
+    return this.riderRepository.findOne({
+      where: { id },
+      relations: ['team', 'raceClass'],
+    });
+  }
+
+  update(id: number, riderData: Partial<Rider>) {
+    return this.riderRepository.update(id, riderData);
+  }
+
+  remove(id: number) {
+    return this.riderRepository.delete(id);
+  }
 }

@@ -18,13 +18,13 @@
           <el-option v-for="team in teams" :key="team.id" :label="team.name" :value="team.id" />
         </el-select>
       </el-form-item>
-      <el-form-item label="Kelas Balap" prop="raceClass">
-        <el-select v-model="rider.raceClass" placeholder="Pilih Kelas Balap">
-          <el-option v-for="kelas in raceClasses" :key="kelas" :label="kelas" :value="kelas" />
+      <el-form-item label="Kelas Balap" prop="raceClassId">
+        <el-select v-model="rider.raceClassId" placeholder="Pilih Kelas Balap">
+          <el-option v-for="kelas in raceClasses" :key="kelas.id" :label="kelas.name" :value="kelas.id" />
         </el-select>
       </el-form-item>
       <el-form-item label="Biodata" prop="bio">
-        <el-input type="textarea" v-model="rider.bio" placeholder="Biodata Pembalap" :autosize="{ minRows: 2, maxRows: 4 }" />
+        <el-input v-model="rider.bio" type="textarea" placeholder="Biodata Pembalap" :autosize="{ minRows: 2, maxRows: 4 }" />
       </el-form-item>
       <el-form-item label="Gambar Pembalap" prop="image">
         <el-upload
@@ -35,7 +35,7 @@
         >
           <el-button slot="trigger" type="primary">Pilih Gambar</el-button>
           <div v-if="rider.image" style="margin-top: 10px;">
-            <img :src="rider.image" alt="Pembalap" style="max-width: 200px;" />
+            <img :src="rider.image" alt="Pembalap" style="max-width: 200px;">
           </div>
         </el-upload>
       </el-form-item>
@@ -59,19 +59,19 @@ export default {
         birthPlaceDate: '',
         country: '',
         teamId: null,
-        raceClass: '',
+        raceClassId: null,
         bio: '',
         image: ''
       },
       teams: [],
-      raceClasses: ['MotoGP', 'Moto2', 'Moto3', 'MotoE'],
+      raceClasses: [],
       rules: {
         name: [{ required: true, message: 'Nama wajib diisi', trigger: 'blur' }],
         number: [{ required: true, message: 'Nomor motor wajib diisi', trigger: 'blur' }],
         birthPlaceDate: [{ required: true, message: 'Tempat, tanggal lahir wajib diisi', trigger: 'blur' }],
         country: [{ required: true, message: 'Negara wajib diisi', trigger: 'blur' }],
         teamId: [{ required: true, message: 'Team wajib dipilih', trigger: 'change' }],
-        raceClass: [{ required: true, message: 'Kelas balap wajib dipilih', trigger: 'change' }],
+        raceClassId: [{ required: true, message: 'Kelas balap wajib dipilih', trigger: 'change' }],
         bio: [{ required: true, message: 'Biodata wajib diisi', trigger: 'blur' }],
         image: [{ required: true, message: 'Gambar pembalap wajib diisi', trigger: 'change' }]
       }
@@ -79,11 +79,17 @@ export default {
   },
   created() {
     this.fetchTeams()
+    this.fetchRaceClasses()
   },
   methods: {
     fetchTeams() {
       axios.get('http://localhost:5001/teams').then(res => {
         this.teams = res.data
+      })
+    },
+    fetchRaceClasses() {
+      axios.get('http://localhost:5001/race-classes').then(res => {
+        this.raceClasses = res.data
       })
     },
     handleImageUpload(file) {

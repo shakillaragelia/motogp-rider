@@ -13,13 +13,13 @@
       <el-form-item label="Foto Sirkuit" prop="image">
         <el-upload
           class="upload-demo"
-          action=""  <!-- Kosongkan jika ingin upload manual -->
+          action=""
           :show-file-list="false"
           :before-upload="handleImageUpload"
         >
           <el-button slot="trigger" type="primary">Pilih Gambar</el-button>
           <div v-if="raceSchedule.image" style="margin-top: 10px;">
-            <img :src="raceSchedule.image" alt="Sirkuit" style="max-width: 200px;" />
+            <img :src="raceSchedule.image" alt="Sirkuit" style="max-width: 200px;">
           </div>
         </el-upload>
       </el-form-item>
